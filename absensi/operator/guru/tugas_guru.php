@@ -1,0 +1,86 @@
+<?php
+include '../../db/koneksi.php';
+// include '../akses.php';
+include '../../layout/header.php';
+?>
+
+<div id="content" style="margin-top:60px;">
+  <div class="regular-page-area section-padding-20">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="details-content">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <h2 id="xs" ><i class="icon-calendar"></i> Fungsi & Tugas Guru </h2>
+                </div>
+                <div class="col-sm" style="text-align: right;margin-right: 5%;">
+                  <a class="col-sm" href="http://localhost/SMK_1_PASAMAN/absensi/operator/guru/tambah_tugas_guru" style=""><h1 id="xs" ><i class="icon-plus-sign" style="color:mediumseagreen;"></i> </h1></a>
+                </div>
+              </div>
+            </div>
+            <div id="myDiv" class="container-fluid">
+              <hr>
+              <div class="row-fluid">
+                <div class="span12">
+                  <div class="widget-box">
+                    <div class="widget-title">
+                     <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">No</th>
+                          <th class="text-center" style="background-color: #404040; color:white;">Nama/Nip</th>
+                          <th class="text-center" style="background-color: #404040; color:white;">Pendidikan</th>
+                          <th class="text-center" style="background-color: #404040; color:white;">Mata Pelajaran <br/> Tugas Tambahan</th>
+                          <th class="text-center" style="width: 5%;background-color: #404040; color:white;">Kelas</th>
+                          <th class="text-center" style="width: 5%;background-color: #404040; color:white;">Jmlh Jam</th>
+                          <th class="text-center" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;;"colspan="2">Option</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-center">1</td>
+                          <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
+                          <td class="text-center">Teknik Informatika</td>
+                          <td class="text-center">Kepala Sekolah</td>
+                          <td></td>
+                          <td>24</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">2</td>
+                          <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
+                          <td class="text-center">Teknik Informatika</td>
+                          <td class="text-center">Kepala Sekolah</td>
+                          <td></td>
+                          <td>24</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">3</td>
+                          <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
+                          <td class="text-center">Teknik Informatika</td>
+                          <td class="text-center">Kepala Sekolah</td>
+                          <td></td>
+                          <td>24</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+
+                  </div>
+                  <div class="widget-content">
+                    <div id="placeholder"></div>
+                    <p id="choices"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../js/custom/custom.js"></script>
+<!--end-main-container-part-->
+<?php include '../../layout/footer.php'; ?>
