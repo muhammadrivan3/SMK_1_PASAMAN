@@ -12,7 +12,16 @@ include '../../layout/header.php';
         <div class="col-12">
           <div class="details-content">
 
-            <h2><i class="icon-calendar"></i> Jurusan </h2>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <h2 id="xs" ><i class="icon-calendar"></i> JURUSAN </h2>
+                </div>
+                <div class="col-sm" style="text-align: right;margin-right: 5%;">
+                  <a class="col-sm" href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/tambah_jurusan" style=""><h1 id="xs" ><i class="icon-plus-sign" style="color:mediumseagreen;"></i> </h1></a>
+                </div>
+              </div>
+            </div>
 
             <div id="myDiv" class="container-fluid">
               <hr>

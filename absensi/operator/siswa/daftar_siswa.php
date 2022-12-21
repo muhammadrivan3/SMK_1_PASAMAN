@@ -10,10 +10,16 @@ include '../../layout/header.php';
       <div class="row justify-content-center">
         <div class="col-12">
           <div class="details-content">
-
-            <h2><i class="icon-calendar"></i> SISWA </h2>
-
-            <div id="myDiv" class="container-fluid">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <h2 id="xs" ><i class="icon-calendar"></i> SISWA </h2>
+                </div>
+                <div class="col-sm" style="text-align: right;margin-right: 5%;">
+                  <a class="col-sm" href="http://localhost/SMK_1_PASAMAN/absensi/operator/siswa/tambah_siswa" style=""><h1 id="xs" ><i class="icon-plus-sign" style="color:mediumseagreen;"></i> </h1></a>
+                </div>
+              </div>
+            </div>myDiv" class="container-fluid">
               <hr>
               <div class="row-fluid">
                 <div class="span12">
@@ -39,54 +45,53 @@ include '../../layout/header.php';
                       </thead>
                       <tbody>
                         <tr>
-                        <td class="text-center">1</td>
-                        <td class="text-center">Muhammad Rivan <br> Nis : 123456789 </td>
-                        <td class="text-center" style="widtd:5%;">L</td>
-                        <td class="text-center">24-08-1988</td>
-                        <td class="text-center">Pasaman Baru</td>
-                        <td class="text-center">X-A1</td>
-                        <td class="text-center">Akuntansi</td>
-                        <td class="text-center">0812xxx</td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">2</td>
-                        <td class="text-center">Muhammad Rivan <br> Nis : 123456789 </td>
-                        <td class="text-center" style="widtd:5%;">L</td>
-                        <td class="text-center">24-08-1988</td>
-                        <td class="text-center">Pasaman Baru</td>
-                        <td class="text-center">X-A1</td>
-                        <td class="text-center">Akuntansi</td>
-                        <td class="text-center">0812xxx</td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">3</td>
-                        <td class="text-center">Muhammad Rivan <br> Nis : 123456789 </td>
-                        <td class="text-center" style="widtd:5%;">L</td>
-                        <td class="text-center">24-08-1988</td>
-                        <td class="text-center">Pasaman Baru</td>
-                        <td class="text-center">X-A1</td>
-                        <td class="text-center">Akuntansi</td>
-                        <td class="text-center">0812xxx</td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="widget-content">
-                  <div id="placeholder"></div>
-                  <p id="choices"></p>
+                          <td class="text-center">1</td>
+                          <td class="text-center">Muhammad Rivan <br> Nis : 123456789 </td>
+                          <td class="text-center" style="widtd:5%;">L</td>
+                          <td class="text-center">24-08-1988</td>
+                          <td class="text-center">Pasaman Baru</td>
+                          <td class="text-center">X-A1</td>
+                          <td class="text-center">Akuntansi</td>
+                          <td class="text-center">0812xxx</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">2</td>
+                          <td class="text-center">Muhammad Rivan <br> Nis : 123456789 </td>
+                          <td class="text-center" style="widtd:5%;">L</td>
+                          <td class="text-center">24-08-1988</td>
+                          <td class="text-center">Pasaman Baru</td>
+                          <td class="text-center">X-A1</td>
+                          <td class="text-center">Akuntansi</td>
+                          <td class="text-center">0812xxx</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">3</td>
+                          <td class="text-center">Muhammad Rivan <br> Nis : 123456789 </td>
+                          <td class="text-center" style="widtd:5%;">L</td>
+                          <td class="text-center">24-08-1988</td>
+                          <td class="text-center">Pasaman Baru</td>
+                          <td class="text-center">X-A1</td>
+                          <td class="text-center">Akuntansi</td>
+                          <td class="text-center">0812xxx</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="widget-content">
+                    <div id="placeholder"></div>
+                    <p id="choices"></p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-       
       </div>
     </div>
   </div>
-</div>
-<script src="../../js/custom/custom.js"></script>
-<!--end-main-container-part-->
-<?php include '../../layout/footer.php'; ?>
+  <script src="../../js/custom/custom.js"></script>
+  <!--end-main-container-part-->
+  <?php include '../../layout/footer.php'; ?>

@@ -1,7 +1,7 @@
 <?php
-include '../../db/koneksi.php';
-// include '../akses.php';
-include '../../layout/header.php';
+include '../db/koneksi.php';
+include 'akses.php';
+include '../layout/header.php';
 ?>
 <div id="content" style="margin-top:60px;">
   <div class="regular-page-area section-padding-20">
@@ -13,11 +13,9 @@ include '../../layout/header.php';
             <div class="container">
               <div class="row">
                 <div class="col-sm">
-                  <h2 id="xs" ><i class="icon-calendar"></i> MATA PELAJARAN </h2>
+                  <h2 id="xs" ><i class="icon-calendar"></i> Jadwal </h2>
                 </div>
-                <div class="col-sm" style="text-align: right;margin-right: 5%;">
-                  <a class="col-sm" href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/tambah_mapel" style=""><h1 id="xs" ><i class="icon-plus-sign" style="color:mediumseagreen;"></i> </h1></a>
-                </div>
+                
               </div>
             </div>
 
@@ -35,41 +33,45 @@ include '../../layout/header.php';
                           <th class="text-center" style="background-color: #404040; color:white;">Mata Pelajaran</th>
                           <th class="text-center" style="width:5%;background-color: #404040; color:white;">Kelas</th>
                           <th class="text-center" style="width:20%;background-color: #404040; color:white;">Jurusan / Kosentrasi</th>
-                          
+                          <th class="text-center" style="width:20%;background-color: #404040; color:white;">jam</th>
                           <th class="text-center" colspan="2" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;">Option</th>
                         </tr>
                       </thead>
                       <tbody>
-
                         <tr>
                           <td class="text-center">1</td>
                           <td >MATEMATIKA</td>
                           <td class="text-center">X-A1</td>
                           <td class="text-center">Akuntansi</td>
+                          <td class="text-center">00:00 - 00:00</td>
                         </tr>
                         <tr>
                           <td class="text-center">2</td>
                           <td >IPA</td>
                           <td class="text-center">X-A1</td>
                           <td class="text-center">Akuntansi</td>
+                          <td class="text-center">00:00 - 00:00</td>
                         </tr>
                         <tr>
                           <td class="text-center">3</td>
                           <td >PKN</td>
                           <td class="text-center">X-A1</td>
                           <td class="text-center">Akuntansi</td>
+                          <td class="text-center">00:00 - 00:00</td>
                         </tr>
                         <tr>
                           <td class="text-center">4</td>
                           <td >B.INDONESIA</td>
                           <td class="text-center">X-A1</td>
                           <td class="text-center">Akuntansi</td>
+                          <td class="text-center">00:00 - 00:00</td>
                         </tr>
                         <tr>
                           <td class="text-center">5</td>
                           <td >Akuntansi Keuangan</td>
                           <td class="text-center">X-A1</td>
                           <td class="text-center">Akuntansi-Keuangan</td>
+                          <td class="text-center">00:00 - 00:00</td>
                         </tr>
                       </tbody>
                     </table>
@@ -92,6 +94,6 @@ include '../../layout/header.php';
     </div>
   </div>
 </div>
-<script src="../../js/custom/custom.js"></script>
+<script src="../js/custom/custom.js"></script>
 <!--end-main-container-part-->
-<?php include '../../layout/footer.php'; ?>
+<?php include '../layout/footer.php'; ?>

@@ -67,7 +67,7 @@ $data=mysqli_fetch_array($query);
                 <div class="dropdown-menu">
                   <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/mapel" class="dropdown-item">Mapel</a>
                   <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/jurusan" class="dropdown-item">Jurusan</a>
-                  <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/lokal" class="dropdown-item">Lokal</a>
+                  <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/lokal" class="dropdown-item">Ruangan</a>
                 </div>  
 
               </li>
@@ -92,9 +92,85 @@ $data=mysqli_fetch_array($query);
                 <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="#">Informasi</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
-            </li>
+                <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
+              </li>
             <?php } ?>
+            <?php if ($_SESSION['akses'] == 'wali kelas') {?>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Tugas</span></a>
+                <div class="dropdown-menu">
+                  <a href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/jadwal_jam_mengajar" class="dropdown-item">Jadwal Mengajar</a>
+                  <!-- <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/jurusan" class="dropdown-item">Jurusan</a>
+                  <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/lokal" class="dropdown-item">Ruangan</a> -->
+                </div>  
+
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Absensi</span></a>
+                <ul class="dropdown-menu multi-level" style="margin-left: 10;">
+                  <li class="nav-item dropdown-submenu" style="width: 80%;">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #212529; font-weight: 400; font-size: 1em; margin: 10px; text-decoration: none">Absensi Kelas</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/absensi_kelas/absensi_harian">Harian</a></li>
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/absensi_kelas/absensi_mingguan">Mingguan</a></li>
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/absensi_kelas/absensi_bulanan">Bulanan</a></li>
+
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown-submenu" style="width: 80%;">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #212529; font-weight: 400; font-size: 1em; margin: 10px; text-decoration: none">Absensi Siswa</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_harian">Harian</a></li>
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_mingguan">Mingguan</a></li>
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_bulanan">Bulanan</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_harian">Absensi Online</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Laporan</span></a>
+                <ul class="dropdown-menu multi-level" style="margin-left: 10;">
+                  <li class="nav-item dropdown-submenu" style="width: 80%;">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #212529; font-weight: 400; font-size: 1em; margin: 10px; text-decoration: none">Absensi Kelas</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_harian">Harian</a></li>
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_mingguan">Mingguan</a></li>
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_bulanan">Bulanan</a></li>
+
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown-submenu" style="width: 80%;">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #212529; font-weight: 400; font-size: 1em; margin: 10px; text-decoration: none">Absensi Siswa</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_harian">Harian</a></li>
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_mingguan">Mingguan</a></li>
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_bulanan">Bulanan</a></li>
+
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
+              </li>
+            <?php } ?>
+            <?php if ($_SESSION['akses'] == 'siswa') {?>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Kelas</span></a>
+                <div class="dropdown-menu">
+                  <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/mapel" class="dropdown-item">Mapel</a>
+                  <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/mapel" class="dropdown-item">Daftar Absensi</a>
+                  <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/mapel" class="dropdown-item">Absensi Online</a>
+                </div>  
+
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
+              </li>
+            <?php } ?>
+
           </ul>
         </div>
       </div>

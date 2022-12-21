@@ -28,6 +28,23 @@ if (isset($_GET['tipe'])) {
 				}
 			} 
 			
+		}else if ($_POST['jenis_login'] == "siswa") {
+				// code...
+			$queryLoginUser = mysqli_query($konek,"SELECT * FROM biodata_siswa WHERE username='$_POST[username]' AND password='$_POST[password]';");
+			if(mysqli_num_rows($queryLoginUser) == 1){
+				while ($user = mysqli_fetch_array($queryLoginUser)) {
+					// this code bro...
+					$_SESSION['id_user']  = $user['id_siswa'];
+					$_SESSION['username'] = $user['username'];
+					$_SESSION['password'] = $user['password'];
+					$_SESSION['akses'] = "siswa";
+					Header("Location:siswa");
+
+				}
+			} 
+			
+		}else{
+			Header("Location:404.php");
 		}
 
 	}

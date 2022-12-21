@@ -16,7 +16,7 @@ include '../../layout/header.php';
                   <h2 id="xs" ><i class="icon-calendar"></i> GURU </h2>
                 </div>
                 <div class="col-sm" style="text-align: right;margin-right: 5%;">
-                  <a class="col-sm" href="http://localhost/SMK_1_PASAMAN/absensi/operator/guru/tambah_guru" style=""><h1 id="xs" ><i class="icon-plus-sign" style="color:mediumseagreen;"></i> </h1></a>
+                  <a class="col-sm" href="http://localhost/SMK_1_PASAMAN/absensi/operator/guru/tambah_jam_mengajar" style=""><h1 id="xs" ><i class="icon-plus-sign" style="color:mediumseagreen;"></i> </h1></a>
                 </div>
               </div>
             </div>

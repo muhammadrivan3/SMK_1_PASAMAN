@@ -12,7 +12,16 @@
           <div class="col-12">
             <div class="details-content">
 
-              <h2><i class="icon-calendar"></i> Lokal </h2>
+              <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <h2 id="xs" ><i class="icon-calendar"></i> RUANGAN </h2>
+                </div>
+                <div class="col-sm" style="text-align: right;margin-right: 5%;">
+                  <a class="col-sm" href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/tambah_lokal" style=""><h1 id="xs" ><i class="icon-plus-sign" style="color:mediumseagreen;"></i> </h1></a>
+                </div>
+              </div>
+            </div>
 
               <div id="myDiv" class="container-fluid">
                 <hr>
@@ -31,7 +40,6 @@
                               <th class="text-center" style="background-color: #404040; color:white;" >Wali Kelas</th>
                               <th class="text-center" colspan="2" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;">Option</th>
                               <!-- <th colspan="10">Mata Pelajaran</th> -->
-                              
                           </tr>
                           </thead>
                           <tbody>
