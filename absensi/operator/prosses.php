@@ -31,7 +31,7 @@
  		$namaSementara = $_FILES['foto']['tmp_name'];
 
 		// tentukan lokasi file akan dipindahkan
- 		$dirUpload = "assets/image/";
+ 		$dirUpload = "../assets/image/guru/";
 
 		// pindahkan file
  		$terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
@@ -71,11 +71,11 @@
         $namaSementara = $_FILES['foto']['tmp_name'];
 
         // tentukan lokasi file akan dipindahkan
-        $dirUpload = "http://localhost/SMK_1_PASAMAN/absensi/assets/image/siswa/";
+        $dirUpload = "../assets/image/siswa/";
 
         // pindahkan file
         $terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
-        $queryInputSiswa = mysqli_query($konek,"INSERT INTO biodata_siswa (nis_siswa,nama_siswa,jenis_kelamin_siswa,tgl_lahir_siswa,alamat_siswa,kelas_siswa,lokal_siswa,jurusan_siswa,telepon_siswa,foto_siswa,username,password)VALUES('$_POST[nis]','".strtolower($_POST['nama'])."','$_POST[jenis_kelamin]','$_POST[tgl_lahir]','$_POST[alamat]','$_POST[kelas]','$_POST[lokal]','$_POST[jurusan]','$_POST[telepon]','$namaFile', '$name','$getPassword' )");
+        $queryInputSiswa = mysqli_query($konek,"INSERT INTO biodata_siswa (nis_siswa,nama_siswa,jenis_kelamin_siswa,tgl_lahir_siswa,alamat_siswa,kelas_siswa,lokal_siswa,jurusan_siswa,telepon_siswa,foto_siswa,username,password)VALUES('$_POST[nis]','".strtolower($_POST['nama'])."','$_POST[jenis_kelamin]','$_POST[tgl_lahir]','$_POST[alamat]','$_POST[kelas]','$_POST[lokal]','$_POST[jurusan]','$_POST[telepon]', '$namaFile', '$name','$getPassword' )");
 
         if ($queryInputSiswa) {
             // code...
