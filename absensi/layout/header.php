@@ -63,7 +63,7 @@ $data=mysqli_fetch_array($query);
 
               </li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Pelajaran</span></a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Rombel</span></a>
                 <div class="dropdown-menu">
                   <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/mapel" class="dropdown-item">Mapel</a>
                   <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/jurusan" class="dropdown-item">Jurusan</a>
@@ -91,9 +91,18 @@ $data=mysqli_fetch_array($query);
               <li class="nav-item">
                 <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="#">Informasi</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link " data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text"><div class="text-center">
+                <img src="http://localhost/SMK_1_PASAMAN/absensi/operator/assets/image/<?PHP echo $_SESSION['fotoProfil'] ?>" class="rounded-circle" style="width: 30px; height: 30px;" alt="...">
+              </div></span></a>
+                <div class="dropdown-menu dropdown-menu-end">
+                   <a class="nav-link " style=" color: black;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
+                  <!-- <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/jurusan" class="dropdown-item">Jurusan</a>
+                  <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/lokal" class="dropdown-item">Ruangan</a> -->
+                </div>  
+
               </li>
+              
             <?php } ?>
             <?php if ($_SESSION['akses'] == 'wali kelas') {?>
               <li class="nav-item dropdown">
@@ -151,6 +160,7 @@ $data=mysqli_fetch_array($query);
                   </li>
                 </ul>
               </li>
+              
               <li class="nav-item">
                 <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
               </li>

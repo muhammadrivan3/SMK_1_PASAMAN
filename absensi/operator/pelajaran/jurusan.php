@@ -43,22 +43,22 @@ include '../../layout/header.php';
                           </tr>
                         </thead>
                         <tbody>
+                          <?php 
+                          $queryDataJurusan = mysqli_query($konek,"SELECT * FROM jurusan JOIN biodata_guru ON jurusan.kaproka_jurusan = biodata_guru.id_guru ");
+                          $no=1;
+                          while($dataJurusan = mysqli_fetch_array($queryDataJurusan)){
+                            ?>
                           <tr>
-                            <td class="text-center">1</td>
-                            <td class="text-center" >Akuntansi</td>
-                            <td class="text-center" >Keuangan</td>
-                            <td class="text-center" >Hendri,S.Pd</td>
+                            <td class="text-center"><?php echo $no; ?></td>
+                            <td class="text-center" ><?php echo $dataJurusan['nama_jurusan']; ?></td>
+                            <td class="text-center" ><?php echo $dataJurusan['kosentrasi_jurusan']; ?></td>
+                            <td class="text-center" ><?php echo strtoupper($dataJurusan['nama_guru']); ?></td>
                             <td class="text-center"></td>
                           </tr>
-                          <tr>
-                            <td class="text-center">2</td>
-                            
-                            <td class="text-center" >Akuntansi</td>
-                            <td class="text-center" >Pajak</td>
-                            <td class="text-center" >Hendra,S.Pd</td>
-                            <td class="text-center"></td>
-
-                          </tr>
+                          <?php 
+                          $no++;
+                          } ?>
+                          
 
                         </tbody>
                       </table>

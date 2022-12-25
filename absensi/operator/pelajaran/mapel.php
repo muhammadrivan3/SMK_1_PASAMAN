@@ -33,7 +33,7 @@ include '../../layout/header.php';
                           <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">No</th>
 
                           <th class="text-center" style="background-color: #404040; color:white;">Mata Pelajaran</th>
-                          <th class="text-center" style="width:5%;background-color: #404040; color:white;">Kelas</th>
+                          <!-- <th class="text-center" style="width:5%;background-color: #404040; color:white;">Kelas</th> -->
                           <th class="text-center" style="width:20%;background-color: #404040; color:white;">Jurusan / Kosentrasi</th>
                           
                           <th class="text-center" colspan="2" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;">Option</th>
@@ -41,36 +41,20 @@ include '../../layout/header.php';
                       </thead>
                       <tbody>
 
-                        <tr>
-                          <td class="text-center">1</td>
-                          <td >MATEMATIKA</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi</td>
+                        <?php 
+                        $queryDataMapel = mysqli_query($konek,"SELECT * FROM mapel JOIN jurusan ON mapel.Kosentrasi = jurusan.id_jurusan");
+                        $no=1;
+                        while($dataMapel = mysqli_fetch_array($queryDataMapel)){?>
+                          <tr>
+                          <td class="text-center"><?php echo $no; ?></td>
+                          <td ><?php echo $dataMapel['nama_mapel']; ?></td>
+                          
+                          <td class="text-center"><?php echo $dataMapel['nama_jurusan']."-".$dataMapel['kosentrasi_jurusan']; ?></td>
                         </tr>
-                        <tr>
-                          <td class="text-center">2</td>
-                          <td >IPA</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">3</td>
-                          <td >PKN</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">4</td>
-                          <td >B.INDONESIA</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">5</td>
-                          <td >Akuntansi Keuangan</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi-Keuangan</td>
-                        </tr>
+
+
+                        <?php } ?>
+                        
                       </tbody>
                     </table>
 

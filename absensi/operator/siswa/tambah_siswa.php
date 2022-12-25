@@ -15,8 +15,15 @@ include '../../layout/header.php';
 
             <div id="myDiv" class="container-fluid">
               <hr>
-              <form action="proses.php?kategori=siswa" method="post" class="form-container" style="margin:10px" autocomplete="false">
+              <form action="../prosses.php?tipe=siswa" method="post" class="form-container" style="margin:10px" autocomplete="false">
                 <h1>Tambahkan Siswa</h1>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label">Foto</label>
+                  :
+                  <div class="col-sm-8">
+                    <input type="file" class="form-control" name="foto">
+                  </div>
+                </div>
                 <div class="row mb-3">
                   <label class="col-sm-2 col-form-label">Nis</label>
                   :
@@ -72,13 +79,14 @@ include '../../layout/header.php';
                   </div>
                 </div>
                 <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label">Kelas</label>
-                  :
-                  <div class="col-sm-8">
-                    <select name="kelas" class="form-control" id="pilih_kelas">
-                      <option value="">Pilih Kelas</option>
-
-
+                    <label class="col-sm-2 col-form-label">Kelas</label>
+                    :
+                    <div class="col-sm-8">
+                      <select name="kelas" class="form-control" id="kelas">
+                        <option value="">Kelas</option>
+                        <option value="X">X</option>
+                        <option value="XI">XI</option>
+                        <option value="XII">XII</option>
                       </select>
                     </div>
                   </div>
@@ -86,20 +94,36 @@ include '../../layout/header.php';
                     <label class="col-sm-2 col-form-label">Jurusan</label>
                     :
                     <div class="col-sm-8">
-                      <select name="jurusan" class="form-control" id="pilih_jurusan">
-                        <option value="">Pilih Jurusan</option>
-                        
+                      <select name="jurusan" class="form-control" id="jurusan">
+                        <option value="">Jurusan</option>
+                        <?php 
+                       $queryDataJurusan = mysqli_query($konek,"SELECT * FROM jurusan");
+                       
+                       while($dataJurusan = mysqli_fetch_array($queryDataJurusan)){
+                       
 
-                        </select>
-                      </div>
+                        ?>
+                        <option value="<?php echo $dataJurusan['id_jurusan']; ?>"><?php echo $dataJurusan['nama_jurusan']; ?> - <?php echo $dataJurusan['kosentrasi_jurusan']; ?></option>
+                        <?php } ?>
+
+                      </select>
                     </div>
+                  </div>
                     <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label">Lokal</label>
+                      <label class="col-sm-2 col-form-label">Ruangan</label>
                       :
                       <div class="col-sm-8">
                         <select name="lokal" class="form-control" id="pilih_lokal">
-                          <option value="">Pilih Lokal</option>
-                          
+                          <option value="">Ruangan</option>
+                          <?php 
+                       $queryDataLokal = mysqli_query($konek,"SELECT * FROM wali_kelas");
+                       
+                       while($dataLokal = mysqli_fetch_array($queryDataLokal)){
+                       
+
+                        ?>
+                        <option value="<?php echo $dataLokal['id_lokal']; ?>"><?php echo $dataLokal['kelas']; ?> - <?php echo $dataLokal['nama_lokal']; ?></option>
+                        <?php } ?>
 
                           </select>
                         </div>

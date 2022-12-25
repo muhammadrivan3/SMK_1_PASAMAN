@@ -20,9 +20,7 @@ include "../../layout/header.php"
                 </div>
               </div>
             </div>
-
             <div id="myDiv" class="container-fluid">
-
               <hr>
               <div class="row-fluid">
                 <div class="span12">
@@ -43,18 +41,29 @@ include "../../layout/header.php"
                         </tr>
                       </thead>
                       <tbody>
-                       <tr>
-                        <td class="text-center">1</td>
-                        <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
-                        <td class="text-center" style="widtd:5%;">L</td>
-                        <td class="text-center">24-08-1988</td>
-                        <td class="text-center">Pasaman Baru</td>
-                        <td class="text-center">PNS</td>
-                        <td class="text-center">Kepala Sekolah</td>
-                        <td class="text-center">0812xxx</td>
+                      <?php 
+                       $queryDataGuru = mysqli_query($konek,"SELECT * FROM biodata_guru");
+                       $no = 1;
+                       while($dataGuru = mysqli_fetch_array($queryDataGuru)){
+                        if($dataGuru['status_guru']!= "admin"){
+
+
+                        ?>
+
+                        <tr>
+                        <td class="text-center"><?php echo $no; ?></td>
+                        <td class="text-center"><?php echo strtoupper($dataGuru['nama_guru']); ?><br> Nip : <?php echo $dataGuru['nip_guru']; ?> </td>
+                        <td class="text-center" style="widtd:5%;"><?php echo $dataGuru['jenis_kelamin_guru']; ?></td>
+                        <td class="text-center"><?php echo $dataGuru['tgl_lahir_guru']; ?></td>
+                        <td class="text-center"><?php echo $dataGuru['alamat_guru']; ?></td>
+                        <td class="text-center"><?php echo $dataGuru['status_guru']; ?></td>
+                        <td class="text-center"><?php echo $dataGuru['jabatan_guru']; ?></td>
+                        <td class="text-center"><?php echo $dataGuru['telepon_guru']; ?></td>
                         <td class="text-center" colspan="2">Option</td>
                       </tr>
-                      <tr>
+                       <?php $no++;}} 
+                       ?>
+                      <!-- <tr>
                         <td class="text-center">2</td>
                         <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
                         <td class="text-center" style="widtd:5%;">L</td>
@@ -75,7 +84,7 @@ include "../../layout/header.php"
                         <td class="text-center">Kepala Sekolah</td>
                         <td class="text-center">0812xxx</td>
                         <td class="text-center" colspan="2">Option</td>
-                      </tr>
+                      </tr> -->
                     </tbody>
                   </table>
 
@@ -93,7 +102,7 @@ include "../../layout/header.php"
   </div>
 </div>
 <script src="../../js/custom/custom.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   var nav = document.querySelector('nav');
 
   window.addEventListener('scroll', function () {
@@ -104,6 +113,6 @@ include "../../layout/header.php"
     }
   });
 </script>
-
+ -->
 <!--end-main-container-part-->
 <?php include '../../layout/footer.php'; ?>

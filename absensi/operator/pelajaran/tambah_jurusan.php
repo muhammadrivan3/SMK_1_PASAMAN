@@ -16,7 +16,7 @@ include '../../layout/header.php';
             <hr>
             <div>
               <div id="myDiv" class="container-fluid">
-                <form action="../proses.php?kategori=jurusan" method="post" class="form-container" style="margin:10px" autocomplete="false">
+                <form action="../prosses.php?tipe=jurusan" method="post" class="form-container" style="margin:10px" autocomplete="false">
                   <h1>Tambahkan Jurusan</h1>
                   
                   <div class="row mb-3">
@@ -25,7 +25,12 @@ include '../../layout/header.php';
                     <div class="col-sm-8">
                       <select name="guru" class="form-control" id="select_box">
                         <option value="">Pilih Guru</option>
+                        <?php 
+                        $queryDataGuru = mysqli_query($konek,"SELECT * from biodata_guru WHERE jabatan_guru='kaproka'");
+                        while($dataGuru = mysqli_fetch_array($queryDataGuru)){?>
+                          <option value="<?php echo $dataGuru['id_guru']; ?>"> <?php echo $dataGuru['nama_guru']; ?></option>
 
+                        <?php } ?>
 
                       </select>
                     </div>

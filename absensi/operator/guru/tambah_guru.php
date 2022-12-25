@@ -9,11 +9,11 @@ include '../../layout/header.php';
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12">
-          <div class="details-content">
+          <div class="details-content"> 
             <h2 id="xs"><i class="icon-calendar"></i> GURU </h2>
             <hr>
             <div id="myDiv" class="container-fluid">
-              <form action="../proses.php?kategori=guru" method="post" class="form-container" style="margin:10px" autocomplete="false">
+              <form action="../prosses.php?tipe=guru" method="post" class="form-container" enctype="multipart/form-data" style="margin:10px" autocomplete="false">
                 <h1>Tambahkan guru</h1>
                 <div class="row mb-3">
                   <label class="col-sm-2 col-form-label">Foto</label>
@@ -105,18 +105,18 @@ include '../../layout/header.php';
                     <input type="number" class="form-control"  placeholder="Telepon" name="telepon">
                   </div>
                 </div>
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                   <label for="inputPassword" class="col-sm-2 col-form-label">Username</label>
                   :
                   <div class="col-sm-8">
                     <input type="text" class="form-control"  placeholder="Username" name="get_username">
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="row mb-3">
                 <div class="col-sm-10 offset-sm-2">
-                  <input type="batal" value="Batal" name="batal" onclick="closeForm()" style="width:25%; background: #ff3333;" />
-                  <input type="submit" value="Simpan" name="simpan"style="width:25%;" />
+                  <!-- <input type="batal" value="Batal" name="batal" onclick="closeForm()" style="width:25%; background: #ff3333;" /> -->
+                  <input type="submit" value="Simpan" name="simpan" style="width:25%;" />
                 </div>
               </div>
             </form>

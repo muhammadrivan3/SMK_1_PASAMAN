@@ -57,35 +57,30 @@ include '../../layout/header.php';
                           <th class="text-center" style="background-color: #404040; color:white;">Nama/Nip</th>
                           <th class="text-center" style="background-color: #404040; color:white;">Mata Pelajaran</th>
                           <th class="text-center" style="width:5%;background-color: #404040; color:white;">Kelas</th>
+                          <th class="text-center" style="background-color: #404040; color:white;">Jurusan</th>
                           <th class="text-center" style="background-color: #404040; color:white;">Mulai/Berakhir</th>
                           <th class="text-center" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;" colspan="2">Option</th>
                         </tr>
                       </thead>
                       <tbody>
+                        <?php 
+                        $queryDataJamMengajar = mysqli_query($konek,"SELECT * FROM jam_mengajar JOIN biodata_guru ON jam_mengajar.id_guru = biodata_guru.id_guru JOIN mapel ON jam_mengajar.id_mapel = mapel.id_mapel JOIN jurusan ON jam_mengajar.id_jurusan = jurusan.id_jurusan");
+                        $no=1;
+                        while($dataJamMengajar = mysqli_fetch_array($queryDataJamMengajar)){
+                        
+                          ?>
                         <tr>
-                          <td class="text-center">1</td>
-                          <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
-                          <td class="text-center">Teknik Informatika</td>
-                          <td class="text-center">X</td>
-                          <td class="text-center">07:00 - 09:00</td>
+                          <td class="text-center"><?php echo $no; ?></td>
+                          <td class="text-center"><?php echo $dataJamMengajar['nama_guru']; ?> <br> Nip : <?php echo $dataJamMengajar['nip_guru']; ?> </td>
+                          <td class="text-center"><?php echo $dataJamMengajar['nama_mapel']; ?></td>
+                          <td class="text-center"><?php echo $dataJamMengajar['kelas']; ?></td>
+                          <td class="text-center"><?php echo $dataJamMengajar['nama_jurusan']; ?> - <?php echo $dataJamMengajar['kosentrasi_jurusan']; ?></td>
+                          <td class="text-center"><?php echo $dataJamMengajar['jam_mulai']; ?> - <?php echo $dataJamMengajar['jam_berakhir']; ?></td>
                           <td></td>
                         </tr>
-                        <tr>
-                          <td class="text-center">2</td>
-                          <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
-                          <td class="text-center">Teknik Informatika</td>
-                          <td class="text-center">X</td>
-                          <td class="text-center">07:00 - 09:00</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">3</td>
-                          <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
-                          <td class="text-center">Teknik Informatika</td>
-                          <td class="text-center">X</td>
-                          <td class="text-center">07:00 - 09:00</td>
-                          <td></td>
-                        </tr>
+                        <?php
+                        $no++;} ?>
+                        
                       </tbody>
                     </table>
                   </div>

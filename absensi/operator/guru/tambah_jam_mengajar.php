@@ -23,27 +23,17 @@ include '../../layout/header.php';
             <div id="myDiv" class="container-fluid">
               <hr>
               <div class="m-4">
-                <form action="../proses.php?kategori=jamMengajar" method="post" class="form-container" style="margin:10px" autocomplete="false">
+                <form action="../prosses.php?tipe=jamMengajar" method="post" class="form-container" style="margin:10px" autocomplete="false">
                   <h1>Tambahkan Jam Mengajar</h1>
                   <div class="row mb-3">
                     <label class="col-sm-2 col-form-label">Kelas</label>
                     :
                     <div class="col-sm-8">
-                      <select name="kelas" class="form-control" id="pilih_kelas">
-                        <option value="">Pilih Kelas</option>
-                        
-
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Lokal</label>
-                    :
-                    <div class="col-sm-8">
-                      <select name="lokal" class="form-control" id="pilih_lokal">
-                        <option value="">Pilih Lokal</option>
-
-
+                      <select name="kelas" class="form-control" id="kelas">
+                        <option value="">Kelas</option>
+                        <option value="X">X</option>
+                        <option value="XI">XI</option>
+                        <option value="XII">XII</option>
                       </select>
                     </div>
                   </div>
@@ -51,9 +41,17 @@ include '../../layout/header.php';
                     <label class="col-sm-2 col-form-label">Jurusan</label>
                     :
                     <div class="col-sm-8">
-                      <select name="jurusan" class="form-control" id="pilih_jurusan">
-                        <option value="">Pilih Jurusan</option>
+                      <select name="jurusan" class="form-control" id="jurusan">
+                        <option value="">Jurusan</option>
+                        <?php 
+                       $queryDataJurusan = mysqli_query($konek,"SELECT * FROM jurusan");
+                       
+                       while($dataJurusan = mysqli_fetch_array($queryDataJurusan)){
+                       
 
+                        ?>
+                        <option value="<?php echo $dataJurusan['id_jurusan']; ?>"><?php echo $dataJurusan['nama_jurusan']; ?> - <?php echo $dataJurusan['kosentrasi_jurusan']; ?></option>
+                        <?php } ?>
 
                       </select>
                     </div>
@@ -62,9 +60,17 @@ include '../../layout/header.php';
                     <label class="col-sm-2 col-form-label">Nama Guru</label>
                     :
                     <div class="col-sm-8">
-                      <select name="guru" class="form-control" id="pilih_guru">
-                        <option value="">Pilih Guru</option>
+                      <select name="guru" class="form-control" id="guru">
+                        <option value="">Guru</option>
+                         <?php 
+                       $queryDataGuru = mysqli_query($konek,"SELECT * FROM biodata_guru");
+                       
+                       while($dataGuru = mysqli_fetch_array($queryDataGuru)){
+                        if($dataGuru['status_guru']!= "admin"){
 
+                        ?>
+                        <option value="<?php echo $dataGuru['id_guru']; ?>"><?php echo $dataGuru['nama_guru']; ?></option>
+                        <?php }} ?>
 
                       </select>
                     </div>
@@ -74,17 +80,31 @@ include '../../layout/header.php';
                     :
                     <div class="col-sm-8">
                       <select name="mapel" class="form-control" id="pilih_mpl">
-                        <option value="">Pilih Mata Pelajaran</option>
-
+                        <option value="">Mata Pelajaran</option>
+                        <?php 
+                       $queryDataMapel = mysqli_query($konek,"SELECT * FROM mapel");
+                       
+                       while($dataMapel = mysqli_fetch_array($queryDataMapel)){
+                        ?>
+                        <option value="<?php echo $dataMapel['id_mapel']; ?>"><?php echo $dataMapel['nama_mapel']; ?></option>
+                        <?php } ?>
 
                       </select>
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Hari</label>
+                    <label class="col-sm-2 col-form-label">Hari</label>
                     :
                     <div class="col-sm-8">
-                      <input type="text" class="form-control"  placeholder="Hari" name="hari">
+                      <select name="hari" class="form-control" id="pilih_kelas">
+                        <option value="">Hari</option>
+                        <option value="SENIN">Senin</option>
+                        <option value="SELASA">Selasa</option>
+                        <option value="RABU">Rabu</option>
+                        <option value="KAMIS">Kamis</option>
+                        <option value="JUMAT">Jumat</option>
+                        <option value="SABTU">Sabtu</option>
+                      </select>
                     </div>
                   </div>
                   <div class="row mb-3">

@@ -39,15 +39,27 @@ include '../../layout/header.php';
                         </tr>
                       </thead>
                       <tbody>
+
+                        <?php
+                          $queryGetGuru = mysqli_query($konek,"SELECT * FROM biodata_guru JOIN tugas_tambahan ON biodata_guru.id_guru = tugas_tambahan.id_guru");
+                          $no=1;
+                          while($dataGuru=mysqli_fetch_array($queryGetGuru)){
+                            if ($dataGuru['status_guru']!="admin") {
+                              // code...
+                            
+                            ?>
                         <tr>
-                          <td class="text-center">1</td>
-                          <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
-                          <td class="text-center">Teknik Informatika</td>
-                          <td class="text-center">Kepala Sekolah</td>
-                          <td></td>
-                          <td>24</td>
+                          <td class="text-center"><?php echo $no;?></td>
+                          <td class="text-center"><?php echo $dataGuru['nama_guru'];?> <br> Nip : <?php echo $dataGuru['nip_guru'];?> </td>
+                          <td class="text-center"><?php echo $dataGuru['pendidikan_guru'];?></td>
+                          <td class="text-center"><?php echo $dataGuru['nama_tugas_tambahan'];?></td>
+                          <td><?php echo $dataGuru['kelas_tugas_tambahan']; ?></td>
+                          <td><?php echo $dataGuru['jam_tugas_tambahan']; ?></td>
                         </tr>
-                        <tr>
+                        <?php
+                          $no++;}}
+                        ?>
+                        <!-- <tr>
                           <td class="text-center">2</td>
                           <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
                           <td class="text-center">Teknik Informatika</td>
@@ -62,7 +74,7 @@ include '../../layout/header.php';
                           <td class="text-center">Kepala Sekolah</td>
                           <td></td>
                           <td>24</td>
-                        </tr>
+                        </tr> -->
                       </tbody>
                     </table>
 

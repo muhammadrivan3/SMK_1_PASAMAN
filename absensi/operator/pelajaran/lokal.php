@@ -29,7 +29,6 @@
                   <div class="span12">
                     <div class="widget-box">
                       <div class="widget-title"> 
-                        <!-- <div class="widget-content nopadding"> -->
                        <table class="table table-bordered">
                           <thead>
                             <tr>
@@ -43,24 +42,18 @@
                           </tr>
                           </thead>
                           <tbody>
+                            <?php 
+                            $queryDataWaliKelas = mysqli_query($konek,"SELECT * FROM wali_kelas JOIN biodata_guru ON wali_kelas.id_guru = biodata_guru.id_guru");
+                            $no=1;
+                            while($dataWaliKelas = mysqli_fetch_array($queryDataWaliKelas)) {?>
                            <tr>
-                             <td>1</td>
-                             <td>X</td>
-                             <td>A1</td>
-                             <td>Abulwafa,S.pd</td>
+                             <td><?php echo $no; ?></td>
+                             <td><?php echo $dataWaliKelas['kelas']; ?></td>
+                             <td><?php echo $dataWaliKelas['nama_lokal']; ?></td>
+                             <td><?php echo $dataWaliKelas['nama_guru']; ?></td>
                            </tr>
-                           <tr>
-                             <td>2</td>
-                             <td>X</td>
-                             <td>A2</td>
-                             <td>Abulwafa,S.pd</td>
-                           </tr>
-                           <tr>
-                             <td>3</td>
-                             <td>X</td>
-                             <td>A3</td>
-                             <td>Abulwafa,S.pd</td>
-                           </tr>
+                         <?php $no++;} ?>
+                           
                           </tbody>
                         </table>
                         <!-- A button to open the popup form -->

@@ -1,4 +1,4 @@
-
+ 
 
 <?php 
 	//memasukan modul koneksi
@@ -17,6 +17,7 @@ if (isset($_GET['tipe'])) {
 					$_SESSION['username'] = $user['username'];
 					$_SESSION['password'] = $user['password'];
 					$_SESSION['akses']	  =	$user['jabatan_guru'];
+					$_SESSION['fotoProfil']	 =	$user['foto_guru'];
 					if($_SESSION['akses'] == "guru"){
 						Header("Location:guru");
 					}else if($_SESSION['akses'] == "wali kelas"){

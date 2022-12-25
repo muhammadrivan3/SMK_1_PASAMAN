@@ -13,8 +13,8 @@ include '../../layout/header.php';
             <h2 id="xs"><i class="icon-calendar"></i>Fungsi GURU </h2>
             <hr>
             <div id="myDiv" class="container-fluid">
-              <form action="../proses.php?kategori=fungsiGuru" method="post" class="form-container" style="margin:10px" autocomplete="false">
-                <h1>Tambahkan Fungsi Guru</h1>
+              <form action="../prosses.php?tipe=tugasTambahan" method="post" class="form-container" style="margin:10px" autocomplete="false">
+                <h1>Tambahkan Tugas/Fungsi Guru</h1>
                 <div class="row mb-3">
                   <label for="inputPassword" class="col-sm-2 col-form-label">Nama</label>
                   :
@@ -23,10 +23,11 @@ include '../../layout/header.php';
                       <option>Pilih Guru</option>
                       <?php 
                       $query_dataGuru = mysqli_query($konek,"SELECT * FROM biodata_guru");
-                      while($dataGuru = mysqli_fetch_array($query_dataGuru)){?>
-                        <option value="<?php echo $dataGuru['id_guru']; ?>"> <?php echo $dataGuru['nama']; ?></option>
+                      while($dataGuru = mysqli_fetch_array($query_dataGuru)){ 
+                        if($dataGuru['status_guru']!="admin"){?>
+                        <option value="<?php echo $dataGuru['id_guru']; ?>"> <?php echo $dataGuru['nama_guru']; ?></option>
 
-                      <?php }
+                      <?php }}
                       ?>
                     </select>
                   </div>
@@ -36,6 +37,18 @@ include '../../layout/header.php';
                   :
                   <div class="col-sm-8">
                     <input type="text" class="form-control"  placeholder="Tugas Tambahan" name="tugasTambahan">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="inputPassword" class="col-sm-2 col-form-label">Kelas</label>
+                  :
+                  <div class="col-sm-8">
+                    <select name="kelas" class="form-control">
+                      <option value="">KELAS</option>
+                      <option value="X">X</option>
+                      <option value="XI">XI</option>
+                      <option value="XII">XII</option>
+                    </select>
                   </div>
                 </div>
                 <div class="row mb-3">

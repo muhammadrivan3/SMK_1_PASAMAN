@@ -16,28 +16,18 @@ include '../../layout/header.php';
             <hr>
             <div>
               <div id="myDiv" class="container-fluid">
-                <form action="../proses.php?kategori=lokal" method="post" class="form-container" style="margin:10px" autocomplete="false">
+                <form action="../prosses.php?tipe=lokal" method="post" class="form-container" style="margin:10px" autocomplete="false">
                   <h1>Tambahkan Lokal</h1>
 
                   <div class="row mb-3">
                     <label class="col-sm-2 col-form-label">Kelas</label>
                     :
                     <div class="col-sm-8">
-                      <select name="kelas" class="form-control" id="pilih_kelas">
-                        <option value="">Pilih Kelas</option>
-                        
-                        
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label class="col-sm-2 col-form-label">Jurusan</label>
-                    :
-                    <div class="col-sm-8">
-                      <select name="jurusan" class="form-control" id="pilih_jurusan">
-                        <option value="">Pilih Jurusan</option>
-                        
-                        
+                      <select name="kelas" class="form-control" id="kelas">
+                        <option value="">Kelas</option>
+                        <option value="X">X</option>
+                        <option value="XI">XI</option>
+                        <option value="XII">XII</option>
                       </select>
                     </div>
                   </div>
@@ -47,7 +37,13 @@ include '../../layout/header.php';
                     <div class="col-sm-8">
                       <select name="guru" class="form-control" id="select_box">
                         <option value="">Pilih Wali Kelas</option>
-                        
+                        <?php 
+                        $queryDataGuru = mysqli_query($konek,"SELECT * from biodata_guru WHERE jabatan_guru='wali kelas'");
+                        while($dataGuru = mysqli_fetch_array($queryDataGuru)){?>
+                          <option value="<?php echo $dataGuru['id_guru']; ?>"> <?php echo $dataGuru['nama_guru']; ?></option>
+
+                        <?php } ?>
+
                         
                       </select>
                     </div>

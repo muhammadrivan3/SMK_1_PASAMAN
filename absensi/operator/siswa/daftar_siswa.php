@@ -19,7 +19,7 @@ include '../../layout/header.php';
                   <a class="col-sm" href="http://localhost/SMK_1_PASAMAN/absensi/operator/siswa/tambah_siswa" style=""><h1 id="xs" ><i class="icon-plus-sign" style="color:mediumseagreen;"></i> </h1></a>
                 </div>
               </div>
-            </div>myDiv" class="container-fluid">
+            <div id="myDiv" class="container-fluid">
               <hr>
               <div class="row-fluid">
                 <div class="span12">
@@ -44,39 +44,27 @@ include '../../layout/header.php';
                         </tr>
                       </thead>
                       <tbody>
+                        
+                        <?php 
+                        $queryDataSiswa = mysqli_query($konek, "SELECT * FROM biodata_siswa");
+                        $no=1;
+                        while ($dataSiswa = mysqli_fetch_array($queryDataSiswa)) {
+                           ?>
                         <tr>
-                          <td class="text-center">1</td>
-                          <td class="text-center">Muhammad Rivan <br> Nis : 123456789 </td>
-                          <td class="text-center" style="widtd:5%;">L</td>
-                          <td class="text-center">24-08-1988</td>
-                          <td class="text-center">Pasaman Baru</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi</td>
-                          <td class="text-center">0812xxx</td>
+                          <td class="text-center"><?php echo $no; ?></td>
+                          <td class="text-center"><?php echo $dataSiswa['nama_siswa']; ?> <br> Nis : <?php echo $dataSiswa['nis_siswa']; ?> </td>
+                          <td class="text-center" style="widtd:5%;"><?php echo $dataSiswa['jenis_kelamin_siswa']; ?></td>
+                          <td class="text-center"><?php echo $dataSiswa['tgl_lahir_siswa']; ?></td>
+                          <td class="text-center"><?php echo $dataSiswa['alamat_siswa']; ?></td>
+                          <td class="text-center"><?php echo $dataSiswa['kelas_siswa']; ?></td>
+                          <td class="text-center"><?php echo $dataSiswa['jurusan_siswa']; ?></td>
+                          <td class="text-center"><?php echo $dataSiswa['telepon_siswa']; ?></td>
                           <td></td>
                         </tr>
-                        <tr>
-                          <td class="text-center">2</td>
-                          <td class="text-center">Muhammad Rivan <br> Nis : 123456789 </td>
-                          <td class="text-center" style="widtd:5%;">L</td>
-                          <td class="text-center">24-08-1988</td>
-                          <td class="text-center">Pasaman Baru</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi</td>
-                          <td class="text-center">0812xxx</td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">3</td>
-                          <td class="text-center">Muhammad Rivan <br> Nis : 123456789 </td>
-                          <td class="text-center" style="widtd:5%;">L</td>
-                          <td class="text-center">24-08-1988</td>
-                          <td class="text-center">Pasaman Baru</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi</td>
-                          <td class="text-center">0812xxx</td>
-                          <td></td>
-                        </tr>
+
+
+                        <?php
+                         } ?>
                       </tbody>
                     </table>
                   </div>
