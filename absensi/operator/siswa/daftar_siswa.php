@@ -46,7 +46,7 @@ include '../../layout/header.php';
                       <tbody>
                         
                         <?php 
-                        $queryDataSiswa = mysqli_query($konek, "SELECT * FROM biodata_siswa");
+                        $queryDataSiswa = mysqli_query($konek, "SELECT * FROM biodata_siswa JOIN jurusan ON biodata_siswa.jurusan_siswa = jurusan.id_jurusan");
                         $no=1;
                         while ($dataSiswa = mysqli_fetch_array($queryDataSiswa)) {
                            ?>
@@ -57,7 +57,7 @@ include '../../layout/header.php';
                           <td class="text-center"><?php echo $dataSiswa['tgl_lahir_siswa']; ?></td>
                           <td class="text-center"><?php echo $dataSiswa['alamat_siswa']; ?></td>
                           <td class="text-center"><?php echo $dataSiswa['kelas_siswa']; ?></td>
-                          <td class="text-center"><?php echo $dataSiswa['jurusan_siswa']; ?></td>
+                          <td class="text-center"><?php echo $dataSiswa['nama_jurusan']; ?>-<?php echo $dataSiswa['kosentrasi_jurusan']; ?></td>
                           <td class="text-center"><?php echo $dataSiswa['telepon_siswa']; ?></td>
                           <td></td>
                         </tr>

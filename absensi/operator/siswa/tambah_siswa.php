@@ -15,7 +15,7 @@ include '../../layout/header.php';
 
             <div id="myDiv" class="container-fluid">
               <hr>
-              <form action="../prosses.php?tipe=siswa" method="post" class="form-container" style="margin:10px" autocomplete="false">
+              <form action="../prosses.php?tipe=siswa" method="post" enctype="multipart/form-data" class="form-container" style="margin:10px" autocomplete="false">
                 <h1>Tambahkan Siswa</h1>
                 <div class="row mb-3">
                   <label class="col-sm-2 col-form-label">Foto</label>
@@ -122,7 +122,7 @@ include '../../layout/header.php';
                        
 
                         ?>
-                        <option value="<?php echo $dataLokal['id_lokal']; ?>"><?php echo $dataLokal['kelas']; ?> - <?php echo $dataLokal['nama_lokal']; ?></option>
+                        <option value="<?php echo $dataLokal['id_wali_kelas']; ?>"><?php echo $dataLokal['kelas']; ?> - <?php echo $dataLokal['nama_lokal']; ?></option>
                         <?php } ?>
 
                           </select>
