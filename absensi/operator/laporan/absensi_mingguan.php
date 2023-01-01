@@ -10,7 +10,7 @@ include '../../layout/header.php';
       <div class="row justify-content-center">
         <div class="col-12">
           <div class="details-content">
-            <h2 id="xs"><i class="icon-calendar"></i> GURU </h2>
+            <h2 id="xs"><i class="icon-calendar"></i> ABSENSI </h2>
             <div id="myDiv" class="container-fluid">
               <hr>
               <div class="row-fluid">
@@ -19,25 +19,24 @@ include '../../layout/header.php';
                     <div class="widget-title">
                       <div style="overflow-x:auto;">
                         <table class="table table-bordered" style="width:100%;">
-                          <caption id="caption">Absensi Mingguan</caption>
+                          <caption id="caption">ABSENSI MINGGUAN</caption>
                           <thead>
                             <tr>
                               <th class="text-center thFixed"
-                              style="width:5%; border-radius: 10px 0 0 0 ;" rowspan="3">No</th>
-                              <th class="text-center thFixed " rowspan="3" style="min-width:300px;" >Nama/Nis  </th>
-                              <th class="text-center thFixed " rowspan="1" colspan="60" >Minggu-1</th>
-                              <th class="text-center thFixed" rowspan="2" colspan="5" >Total</th>
-                              <th class="text-center thFixed " rowspan="3" style="min-width:300px;border-radius: 0 10px 0 0;">Keterangan</th>
+                              style="width:5%; border-radius: 10px 0 0 0 ;" rowspan="3">NO</th>
+                              <th class="text-center thFixed " rowspan="3" style="min-width:300px;" >NAMA/NIS  </th>
+                              <th class="text-center thFixed " rowspan="1" colspan="60" >MINGGU-1</th>
+                              <th class="text-center thFixed" rowspan="2" colspan="5" >TOTAL</th>
+                              <th class="text-center thFixed " rowspan="3" style="min-width:300px;border-radius: 0 10px 0 0;">KETERANGAN</th>
                               
                             </tr>
                            <tr>
-                              <th  colspan="10" class="text-center thFixed">Senin</th>
-                              <th  colspan="10" class="text-center thFixed">Selasa</th>
-                              <th  colspan="10" class="text-center thFixed">Rabu</th>
-                              <th  colspan="10" class="text-center thFixed">Kamis</th>
-                              <th  colspan="10" class="text-center thFixed">Jum'at</th>
-                              <th  colspan="10" class="text-center thFixed">Sabtu</th>
-                              <!-- <th style="width:100%;" class="text-center thFixed">Minggu</th> -->
+                              <th  colspan="10" class="text-center thFixed">SENIN</th>
+                              <th  colspan="10" class="text-center thFixed">SELASA</th>
+                              <th  colspan="10" class="text-center thFixed">RABU</th>
+                              <th  colspan="10" class="text-center thFixed">KAMIS</th>
+                              <th  colspan="10" class="text-center thFixed">JUM'AT</th>
+                              <th  colspan="10" class="text-center thFixed">SABTU</th>
                             </tr>
                             <tr>
 
@@ -122,17 +121,13 @@ include '../../layout/header.php';
                               <td>H</td>
                               <td>H</td>
                               <td>H</td>
-
                               <td>60</td>
                               <td>0</td>
                               <td>0</td>
                               <td>0</td>
                               <td>0</td>
-
                               <td>Siswa Ini Agak Aneh, Namun dia Cabut hanya sesekali aja, Slebew... :)</td>
                             </tr>
-
-                            
                           </tbody>
                         </table>
                       </div>

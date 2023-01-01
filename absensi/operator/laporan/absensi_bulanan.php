@@ -10,7 +10,7 @@ include '../../layout/header.php';
       <div class="row justify-content-center">
         <div class="col-12">
           <div class="details-content">
-            <h2 id="xs"><i class="icon-calendar"></i> GURU </h2>
+            <h2 id="xs"><i class="icon-calendar"></i> ABSENSI </h2>
             <div id="myDiv" class="container-fluid">
               <hr>
               <div class="row-fluid">
@@ -19,15 +19,15 @@ include '../../layout/header.php';
                     <div class="widget-title">
                       <div style="overflow-x:auto;">
                         <table class="table table-bordered" style="width:100%;">
-                          <caption id="caption">Absensi Bulanan</caption>
+                          <caption id="caption">ABSENSI BULANAN</caption>
                           <thead>
                             <tr>
                               <th class="text-center thFixed"
-                              style="width:5%; border-radius: 10px 0 0 0 ;" rowspan="3">No</th>
-                              <th class="text-center thFixed " rowspan="2" style="min-width:300px;" >Nama/Nis  </th>
-                              <th class="text-center thFixed " rowspan="1" colspan="31" >Bulanan</th>
-                              <th class="text-center thFixed" rowspan="1" colspan="5" >Total</th>
-                              <th class="text-center thFixed " rowspan="2" style="min-width:300px;border-radius: 0 10px 0 0;">Keterangan</th>
+                              style="width:5%; border-radius: 10px 0 0 0 ;" rowspan="3">NO</th>
+                              <th class="text-center thFixed " rowspan="2" style="min-width:300px;" >NAMA/NIS  </th>
+                              <th class="text-center thFixed " rowspan="1" colspan="31" >BULANAN</th>
+                              <th class="text-center thFixed" rowspan="1" colspan="5" >TOTAL</th>
+                              <th class="text-center thFixed " rowspan="2" style="min-width:300px;border-radius: 0 10px 0 0;">KETERANGAN</th>
                               
                             </tr>
                            <!-- <tr>

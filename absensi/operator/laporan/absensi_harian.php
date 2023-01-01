@@ -10,7 +10,7 @@ include '../../layout/header.php';
       <div class="row justify-content-center">
         <div class="col-12">
           <div class="details-content">
-            <h2 id="xs"><i class="icon-calendar"></i> GURU </h2>
+            <h2 id="xs"><i class="icon-calendar"></i> ABSENSI </h2>
             <div id="myDiv" class="container-fluid">
               <hr>
               <div class="row-fluid">
@@ -19,20 +19,20 @@ include '../../layout/header.php';
                     <div class="widget-title">
                       <div style="overflow-x:auto;">
                         <table class="table table-bordered" style="width:100%;">
-                          <caption id="caption">Absensi Harian</caption>
+                          <caption id="caption">ABSENSI HARIAN</caption>
                           <thead>
                             <tr>
                               <th class="text-center thFixed"
-                              style="width:5%; border-radius: 10px 0 0 0 ;" rowspan="3">No</th>
-                              <th class="text-center thFixed " rowspan="3" style="min-width:300px;" >Nama/Nis  </th>
-                              <th class="text-center thFixed " rowspan="1" colspan="10" >Hari</th>
+                              style="width:5%; border-radius: 10px 0 0 0 ;" rowspan="3">NO</th>
+                              <th class="text-center thFixed " rowspan="3" style="min-width:300px;" >NAMA/NIS  </th>
+                              <th class="text-center thFixed " rowspan="1" colspan="10" >HARI</th>
                               
-                              <th class="text-center thFixed" rowspan="2" colspan="5" style="">Total</th>
-                              <th class="text-center thFixed " rowspan="3" style="min-width:300px;border-radius: 0 10px 0 0;">Keterangan</th>
+                              <th class="text-center thFixed" rowspan="2" colspan="5" style="">TOTAL</th>
+                              <th class="text-center thFixed " rowspan="3" style="min-width:300px;border-radius: 0 10px 0 0;">KETERANGAN</th>
                               
                             </tr>
                            <tr>
-                              <th  colspan="10" class="text-center thFixed">Senin</th>
+                              <th  colspan="10" class="text-center thFixed">SENIN</th>
                               
                               <!-- <th style="width:100%;" class="text-center thFixed">Minggu</th> -->
                             </tr>

@@ -1,6 +1,6 @@
 <?php
  include '../../db/koneksi.php';
- // include '../akses.php';
+ include '../akses.php';
  include '../../layout/header.php';
  
  ?>
@@ -32,25 +32,23 @@
                        <table class="table table-bordered">
                           <thead>
                             <tr>
-                              <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">No</th>
-                              <th class="text-center" style="width:5%;background-color: #404040; color:white;" >Kelas</th>
-                              <!-- <th class="text-center" >Jurusan</th> -->
-                              <th class="text-center" style="background-color: #404040; color:white;" >Nama Lokal</th>
-                              <th class="text-center" style="background-color: #404040; color:white;" >Wali Kelas</th>
-                              <th class="text-center" colspan="2" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;">Option</th>
-                              <!-- <th colspan="10">Mata Pelajaran</th> -->
+                              <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">NO</th>
+                              <th class="text-center" style="width:5%;background-color: #404040; color:white;" >KELAS</th>
+                              <th class="text-center" style="background-color: #404040; color:white;" >NAMA LOKAL</th>
+                              <th class="text-center" style="background-color: #404040; color:white;" >WALI KELAS</th>
+                              <th class="text-center" colspan="2" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;">OPTION</th>
                           </tr>
                           </thead>
                           <tbody>
                             <?php 
-                            $queryDataWaliKelas = mysqli_query($konek,"SELECT * FROM wali_kelas JOIN biodata_guru ON wali_kelas.id_guru = biodata_guru.id_guru");
+                            $queryDataWaliKelas = mysqli_query($konek,"SELECT * FROM wali_kelas JOIN biodata_guru ON wali_kelas.guru = biodata_guru.id_guru");
                             $no=1;
                             while($dataWaliKelas = mysqli_fetch_array($queryDataWaliKelas)) {?>
                            <tr>
                              <td><?php echo $no; ?></td>
                              <td><?php echo $dataWaliKelas['kelas']; ?></td>
                              <td><?php echo $dataWaliKelas['nama_lokal']; ?></td>
-                             <td><?php echo $dataWaliKelas['nama_guru']; ?></td>
+                             <td><?php echo strtoupper($dataWaliKelas['nama_guru']); ?></td>
                            </tr>
                          <?php $no++;} ?>
                            

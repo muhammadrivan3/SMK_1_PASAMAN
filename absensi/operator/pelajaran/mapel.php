@@ -30,13 +30,13 @@ include '../../layout/header.php';
                      <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">No</th>
+                          <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">NO</th>
 
-                          <th class="text-center" style="background-color: #404040; color:white;">Mata Pelajaran</th>
+                          <th class="text-center" style="background-color: #404040; color:white;">MATA PELAJARAN</th>
                           <!-- <th class="text-center" style="width:5%;background-color: #404040; color:white;">Kelas</th> -->
-                          <th class="text-center" style="width:20%;background-color: #404040; color:white;">Jurusan / Kosentrasi</th>
+                          <th class="text-center" style="width:20%;background-color: #404040; color:white;">JURUSAN / KOSENTRASI</th>
                           
-                          <th class="text-center" colspan="2" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;">Option</th>
+                          <th class="text-center" colspan="2" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;">OPTION</th>
                         </tr>
                       </thead>
                       <tbody>

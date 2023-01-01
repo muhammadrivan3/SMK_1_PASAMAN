@@ -1,9 +1,8 @@
 <?php
 include '../../db/koneksi.php';
-// include '../akses.php';
+include '../akses.php';
 include '../../layout/header.php';
 ?>
-
 <div id="content" style="margin-top:60px;">
   <div class="regular-page-area section-padding-20">
     <div class="container">
@@ -13,7 +12,7 @@ include '../../layout/header.php';
             <div class="container">
               <div class="row">
                 <div class="col-sm">
-                  <h2 id="xs" ><i class="icon-calendar"></i> Fungsi & Tugas Guru </h2>
+                  <h2 id="xs" ><i class="icon-calendar"></i> FUNGSI & TUGAS GURU </h2>
                 </div>
                 <div class="col-sm" style="text-align: right;margin-right: 5%;">
                   <a class="col-sm" href="http://localhost/SMK_1_PASAMAN/absensi/operator/guru/tambah_tugas_guru" style=""><h1 id="xs" ><i class="icon-plus-sign" style="color:mediumseagreen;"></i> </h1></a>
@@ -29,56 +28,126 @@ include '../../layout/header.php';
                      <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">NO</th>
-                          <th class="text-center" style="background-color: #404040; color:white;">NAMA/NIP</th>
-                          <th class="text-center" style="background-color: #404040; color:white;">PENDIDIKAN</th>
-                          <th class="text-center" style="background-color: #404040; color:white;">MATA PELAJARAN <br/> TUGAS TAMBAHAN</th>
-                          <th class="text-center" style="width: 5%;background-color: #404040; color:white;">KELAS</th>
-                          <th class="text-center" style="width: 5%;background-color: #404040; color:white;">JMLH JAM</th>
-                          <th class="text-center" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;;"colspan="2">OPTION</th>
+                          <th rowspan="2" class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">NO</th>
+                          <th rowspan="2" class="text-center" style="background-color: #404040; color:white;">NAMA/NIP</th>
+                          <th rowspan="2" class="text-center" style="background-color: #404040; color:white;">PENDIDIKAN</th>
+                          <th rowspan="2"class="text-center" style="background-color: #404040; color:white;">MATA PELAJARAN <br/> TUGAS TAMBAHAN</th>
+                          <th rowspan="2" class="text-center" style="width: 5%;background-color: #404040; color:white;">KELAS</th>
+                          <th rowspan="1" colspan="2" class="text-center" style="width: 5%;background-color: #404040; color:white;" >JUMLAH</th>
+                          <th rowspan="2" class="text-center" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;"colspan="2">OPTION</th>
+                        </tr>
+                        <tr>
+                          <th>JAM</th>
+                          <th>TOTAL</th>
                         </tr>
                       </thead>
                       <tbody>
 
                         <?php
-                          $queryGetGuru = mysqli_query($konek,"SELECT * FROM biodata_guru JOIN tugas_tambahan ON biodata_guru.id_guru = tugas_tambahan.id_guru");
-                          $no=1;
-                          while($dataGuru=mysqli_fetch_array($queryGetGuru)){
-                            if ($dataGuru['status_guru']!="admin") {
+                        $queryGetGuru = mysqli_query($konek,"SELECT * FROM biodata_guru ");
+                        $no=1;
+                        while($dataGuru=mysqli_fetch_array($queryGetGuru)){
+                          if ($dataGuru['status_guru']!="admin") {
                               // code...
-                            
                             ?>
-                        <tr>
-                          <td class="text-center"><?php echo $no;?></td>
-                          <td class="text-center"><?php echo strtoupper($dataGuru['nama_guru']);?> <br> NIP : <?php echo $dataGuru['nip_guru'];?> </td>
-                          <td class="text-center"><?php echo $dataGuru['pendidikan_guru'];?></td>
-                          <td class="text-center"><?php echo $dataGuru['nama_tugas_tambahan'];?></td>
-                          <td><?php echo $dataGuru['kelas_tugas_tambahan']; ?></td>
-                          <td><?php echo $dataGuru['jam_tugas_tambahan']; ?></td>
-                        </tr>
-                        <?php
-                          $no++;}}
-                        ?>
-                        <!-- <tr>
-                          <td class="text-center">2</td>
-                          <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
-                          <td class="text-center">Teknik Informatika</td>
-                          <td class="text-center">Kepala Sekolah</td>
-                          <td></td>
-                          <td>24</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">3</td>
-                          <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
-                          <td class="text-center">Teknik Informatika</td>
-                          <td class="text-center">Kepala Sekolah</td>
-                          <td></td>
-                          <td>24</td>
-                        </tr> -->
+                            <?php
+                            $queryDataJamMengajar = mysqli_query($konek,"SELECT * FROM jam_mengajar WHERE id_guru=".$dataGuru['id_guru']);
+                            $arrayMapel = array();
+                            $arrayjumlahJam = array();
+                            $arrayKelas = array();
+                            $arrayRuangan = array();
+                            while($dataJamMengajar = mysqli_fetch_array($queryDataJamMengajar)){
+
+                              $arrayMapel[$dataJamMengajar['id_mapel']."-".$dataJamMengajar['kelas']]= $dataJamMengajar['id_mapel'];
+                              $arrayKelas[$dataJamMengajar['id_mapel']."-".$dataJamMengajar['kelas']]= $dataJamMengajar['kelas'];
+                            }
+                            ?>
+                            <?php
+                            $queryTugasTambahan = mysqli_query($konek,"SELECT * FROM tugas_tambahan WHERE id_guru=".$dataGuru['id_guru']);
+                            $arrayTugasTambahan = array();
+                            $arrayKelasTugasTambahan = array();
+                            $arrayJamTugasTambahan = array();
+                            while($dataTugasTambahan = mysqli_fetch_array($queryTugasTambahan)){
+
+                              $arrayTugasTambahan[]= $dataTugasTambahan['nama_tugas_tambahan'];
+                              $arrayKelasTugasTambahan[]= $dataTugasTambahan['kelas_tugas_tambahan'];
+                              $arrayJamTugasTambahan[]= $dataTugasTambahan['jam_tugas_tambahan'];
+                            }
+                            ?>
+                            <tr>
+                              <td class="text-center"><?php echo $no;?></td>
+                              <td class="text-center"><?php echo strtoupper($dataGuru['nama_guru']);?> <br> NIP : <?php echo $dataGuru['nip_guru'];?> </td>
+                              <td class="text-center"><?php echo $dataGuru['pendidikan_guru'];?></td>
+                              <td class="text-center">
+                                <?php
+
+                                foreach($arrayTugasTambahan as $key=>$value)
+                                {
+                                  echo $value."<br>";
+                                }
+                                ?>
+                                <?php
+                                $arrm = array();
+                                foreach($arrayMapel as $key=>$value)
+                                {
+                                  $queryDataMapel = mysqli_query($konek,"SELECT * FROM mapel WHERE id_mapel=".$value);
+                                  while ($dataMapel = mysqli_fetch_array($queryDataMapel)) {
+                                  // code...
+                                    echo $dataMapel['nama_mapel']."<br>";
+                                  }
+                                  $arrm[] = $value;
+                                }
+                                ?>
+                                <td class="text-center"> 
+                                  <?php
+
+                                foreach($arrayKelasTugasTambahan as $key=>$value)
+                                {
+                                  echo $value."<br>";
+                                }
+                                ?>
+                                  <?php
+
+                                  $arrk = array(); 
+                                  foreach($arrayKelas as $key=>$value)
+                                  {
+                                    echo $value."<br>";
+                                    $arrk[] = $value;
+                                  }
+                                ?></td>
+                                <td class="text-center">
+                                  <?php 
+                                  $total = 0;
+                                  foreach($arrayJamTugasTambahan as $key=>$value)
+                                {
+                                  echo $value."<br>";
+                                  $total +=$value;
+                                }
+                                  for ($i=0; $i < sizeof($arrm); $i++) {
+                                    $queryJumlahJamMengajar = mysqli_query($konek,"SELECT COUNT(*) AS JumlahJam FROM jam_mengajar WHERE id_guru=".$dataGuru['id_guru']." AND kelas='".$arrk[$i]."'"." AND id_mapel=".$arrm[$i]);
+                                    if($queryJumlahJamMengajar != null){
+                                      while($dataJumlahJam = mysqli_fetch_array($queryJumlahJamMengajar)){
+                                        echo $dataJumlahJam['JumlahJam']."<br>";
+                                        $total+=$dataJumlahJam['JumlahJam'];
+                                      }
+                                    }
+                                  }
+                                  ?>
+                                </td>
+
+                                <td  style="text-align: center;
+                                vertical-align: middle;;">
+                                <?php if ($total != 0) {
+                                // code...
+                                  echo $total;
+                                } ?>
+                              </td>
+                            </tr>
+                            <?php
+                            $no++;}}
+                            ?>
                       </tbody>
                     </table>
-
-
                   </div>
                   <div class="widget-content">
                     <div id="placeholder"></div>
