@@ -29,15 +29,15 @@ include "../../layout/header.php"
                      <table class="table table-bordered" >
                       <thead>
                         <tr>
-                          <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">No</th>
-                          <th class="text-center" style="background-color: #404040; color:white;">Nama/Nip</th>
+                          <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">NO</th>
+                          <th class="text-center" style="background-color: #404040; color:white;">NAMA/NIP</th>
                           <th class="text-center" style="width:5%;background-color: #404040; color:white;">L/P</th>
-                          <th class="text-center" style="background-color: #404040; color:white;">Tgl Lahir</th>
-                          <th class="text-center"style="background-color: #404040; color:white;">Alamat</th>
-                          <th class="text-center"style="background-color: #404040; color:white;">Status</th>
-                          <th class="text-center"style="background-color: #404040; color:white;">Jabatan</th>
-                          <th class="text-center"style="background-color: #404040; color:white;">Telepon</th>
-                          <th class="text-center" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;" colspan="2">Option</th>
+                          <th class="text-center" style="background-color: #404040; color:white;">TGL LAHIR</th>
+                          <th class="text-center"style="background-color: #404040; color:white;">ALAMAT</th>
+                          <th class="text-center"style="background-color: #404040; color:white;">STATUS</th>
+                          <th class="text-center"style="background-color: #404040; color:white;">JABATAN</th>
+                          <th class="text-center"style="background-color: #404040; color:white;">TELEPON</th>
+                          <th class="text-center" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;" colspan="2">OPTION</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -52,7 +52,7 @@ include "../../layout/header.php"
 
                         <tr>
                         <td class="text-center"><?php echo $no; ?></td>
-                        <td class="text-center"><?php echo strtoupper($dataGuru['nama_guru']); ?><br> Nip : <?php echo $dataGuru['nip_guru']; ?> </td>
+                        <td class="text-center"><?php echo strtoupper($dataGuru['nama_guru']); ?><br> NIP : <?php echo $dataGuru['nip_guru']; ?> </td>
                         <td class="text-center" style="widtd:5%;"><?php echo $dataGuru['jenis_kelamin_guru']; ?></td>
                         <td class="text-center"><?php echo $dataGuru['tgl_lahir_guru']; ?></td>
                         <td class="text-center"><?php echo $dataGuru['alamat_guru']; ?></td>

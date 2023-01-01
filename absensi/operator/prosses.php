@@ -51,7 +51,7 @@
         }
     }else if ($_GET['tipe'] == "jamMengajar") {
         // code...
-        $queryInputJam = mysqli_query($konek,"INSERT INTO jam_mengajar (id_guru,id_mapel,kelas,id_jurusan,hari,jam_mulai,jam_berakhir)VALUES('$_POST[guru]','$_POST[mapel]','$_POST[kelas]','$_POST[jurusan]','$_POST[hari]','$_POST[jamMulai]','$_POST[jamBerakhir]' )");
+        $queryInputJam = mysqli_query($konek,"INSERT INTO jam_mengajar (id_guru,id_mapel,kelas,ruangan,id_jurusan,hari,jam_mulai,jam_berakhir)VALUES('$_POST[guru]','$_POST[mapel]','$_POST[kelas]','$_POST[lokal]','$_POST[jurusan]','$_POST[hari]','$_POST[jamMulai]','$_POST[jamBerakhir]' )");
 
         if ($queryInputJam) {
             // code...

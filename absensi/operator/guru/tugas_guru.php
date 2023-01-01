@@ -29,13 +29,13 @@ include '../../layout/header.php';
                      <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">No</th>
-                          <th class="text-center" style="background-color: #404040; color:white;">Nama/Nip</th>
-                          <th class="text-center" style="background-color: #404040; color:white;">Pendidikan</th>
-                          <th class="text-center" style="background-color: #404040; color:white;">Mata Pelajaran <br/> Tugas Tambahan</th>
-                          <th class="text-center" style="width: 5%;background-color: #404040; color:white;">Kelas</th>
-                          <th class="text-center" style="width: 5%;background-color: #404040; color:white;">Jmlh Jam</th>
-                          <th class="text-center" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;;"colspan="2">Option</th>
+                          <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">NO</th>
+                          <th class="text-center" style="background-color: #404040; color:white;">NAMA/NIP</th>
+                          <th class="text-center" style="background-color: #404040; color:white;">PENDIDIKAN</th>
+                          <th class="text-center" style="background-color: #404040; color:white;">MATA PELAJARAN <br/> TUGAS TAMBAHAN</th>
+                          <th class="text-center" style="width: 5%;background-color: #404040; color:white;">KELAS</th>
+                          <th class="text-center" style="width: 5%;background-color: #404040; color:white;">JMLH JAM</th>
+                          <th class="text-center" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;;"colspan="2">OPTION</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -50,7 +50,7 @@ include '../../layout/header.php';
                             ?>
                         <tr>
                           <td class="text-center"><?php echo $no;?></td>
-                          <td class="text-center"><?php echo $dataGuru['nama_guru'];?> <br> Nip : <?php echo $dataGuru['nip_guru'];?> </td>
+                          <td class="text-center"><?php echo strtoupper($dataGuru['nama_guru']);?> <br> NIP : <?php echo $dataGuru['nip_guru'];?> </td>
                           <td class="text-center"><?php echo $dataGuru['pendidikan_guru'];?></td>
                           <td class="text-center"><?php echo $dataGuru['nama_tugas_tambahan'];?></td>
                           <td><?php echo $dataGuru['kelas_tugas_tambahan']; ?></td>

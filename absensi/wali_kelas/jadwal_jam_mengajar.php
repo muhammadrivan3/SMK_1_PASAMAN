@@ -31,48 +31,33 @@ include '../layout/header.php';
                           <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">No</th>
 
                           <th class="text-center" style="background-color: #404040; color:white;">Mata Pelajaran</th>
-                          <th class="text-center" style="width:5%;background-color: #404040; color:white;">Kelas</th>
+                          <th class="text-center" style="width:10%;background-color: #404040; color:white;">Kelas</th>
                           <th class="text-center" style="width:20%;background-color: #404040; color:white;">Jurusan / Kosentrasi</th>
                           <th class="text-center" style="width:20%;background-color: #404040; color:white;">jam</th>
                           <th class="text-center" colspan="2" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;">Option</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td class="text-center">1</td>
-                          <td >MATEMATIKA</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi</td>
-                          <td class="text-center">00:00 - 00:00</td>
+                        <?php 
+                        $queryDataJamMengajar = mysqli_query($konek, "SELECT * FROM jam_mengajar JOIN mapel ON jam_mengajar.id_mapel = mapel.id_mapel 
+                          JOIN jurusan ON jam_mengajar.id_jurusan = jurusan.id_jurusan WHERE id_guru=".$_SESSION['id_user']);
+                        $no=1;
+                        while($dataJamaMengajar = mysqli_fetch_array($queryDataJamMengajar)){
+                         ?>
+                         <tr>
+                          <td class="text-center"><?php echo $no; ?></td>
+                          <td ><?php echo $dataJamaMengajar['nama_mapel']; ?></td>
+                          <td class="text-center"><?php 
+                          $queryDataRuangan = mysqli_query($konek,"SELECT * FROM wali_kelas WHERE id_wali_kelas=".$dataJamaMengajar['ruangan']);
+                          while($dataRuangan = mysqli_fetch_array($queryDataRuangan)){
+                            echo $dataRuangan['kelas']." - ".$dataRuangan['nama_lokal'];
+                          } ?></td>
+                          <td class="text-center"><?php echo $dataJamaMengajar['nama_jurusan']; ?> - <?php echo $dataJamaMengajar['kosentrasi_jurusan']; ?></td>
+                          <td class="text-center"><?php echo $dataJamaMengajar['jam_mulai']; ?> - <?php echo $dataJamaMengajar['jam_berakhir']; ?></td>
                         </tr>
-                        <tr>
-                          <td class="text-center">2</td>
-                          <td >IPA</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi</td>
-                          <td class="text-center">00:00 - 00:00</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">3</td>
-                          <td >PKN</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi</td>
-                          <td class="text-center">00:00 - 00:00</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">4</td>
-                          <td >B.INDONESIA</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi</td>
-                          <td class="text-center">00:00 - 00:00</td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">5</td>
-                          <td >Akuntansi Keuangan</td>
-                          <td class="text-center">X-A1</td>
-                          <td class="text-center">Akuntansi-Keuangan</td>
-                          <td class="text-center">00:00 - 00:00</td>
-                        </tr>
+                        <?php  $no++;}?>
+                        
+                        
                       </tbody>
                     </table>
 

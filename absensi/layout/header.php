@@ -38,13 +38,14 @@ $data=mysqli_fetch_array($query);
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="mx-auto"></div>
       <ul class="navbar-nav"> 
-        <li class="nav-item">
-          <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="/SMK_1_PASAMAN/absensi/operator/">Home</a>
-        </li>
+
         <!-- operator -->
         <?php if($_SESSION['akses'] == 'admin' || $_SESSION['akses'] == 'operator') {?>
+          <li class="nav-item">
+            <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="/SMK_1_PASAMAN/absensi/operator/">HOME</a>
+          </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Guru</span></a>
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">GURU</span></a>
             <div class="dropdown-menu">
               <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/guru/daftar_guru" class="dropdown-item">Identitas Guru</a>
               <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/guru/tugas_guru" class="dropdown-item">Fungsi & tugas Guru</a>
@@ -55,7 +56,7 @@ $data=mysqli_fetch_array($query);
                 </div>
               </li>
               <li class="nav-item dropdown" >
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Siswa</span></a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">SISWA</span></a>
                 <div class="dropdown-menu">
                   <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/siswa/daftar_siswa" class="dropdown-item">Identitas Siswa</a>
                   <!-- <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/siswa/tambahSiswa.php" class="dropdown-item">Tambah Siswa</a> -->
@@ -63,7 +64,7 @@ $data=mysqli_fetch_array($query);
 
               </li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Rombel</span></a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">ROMBEL</span></a>
                 <div class="dropdown-menu">
                   <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/mapel" class="dropdown-item">Mapel</a>
                   <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/jurusan" class="dropdown-item">Jurusan</a>
@@ -72,7 +73,7 @@ $data=mysqli_fetch_array($query);
 
               </li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Laporan</span></a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">LAPORAN</span></a>
                 <ul class="dropdown-menu multi-level" style="margin-left: 10;">
                   <li class="nav-item dropdown-submenu" style="width: 80%;">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #212529; font-weight: 400; font-size: 1em; margin: 10px; text-decoration: none">Absensi</a>
@@ -86,38 +87,38 @@ $data=mysqli_fetch_array($query);
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="#">Pustaka</a>
+                <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="#">PUSTAKA</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="#">Informasi</a>
+                <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="#">INFORMASI</a>
               </li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link " data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text"><div class="text-center">
-                <img src="http://localhost/SMK_1_PASAMAN/absensi/operator/assets/image/<?PHP echo $_SESSION['fotoProfil'] ?>" class="rounded-circle" style="width: 30px; height: 30px;" alt="...">
-              </div></span></a>
+                  <img src="http://localhost/SMK_1_PASAMAN/absensi/operator/assets/image/<?PHP echo $_SESSION['fotoProfil'] ?>" class="rounded-circle" style="width: 30px; height: 30px;" alt="...">
+                </div></span></a>
                 <div class="dropdown-menu dropdown-menu-end">
-                   <a class="nav-link " style=" color: black;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
+                 <a class="nav-link " style=" color: black;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
                   <!-- <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/jurusan" class="dropdown-item">Jurusan</a>
-                  <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/lokal" class="dropdown-item">Ruangan</a> -->
-                </div>  
+                    <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/lokal" class="dropdown-item">Ruangan</a> -->
+                  </div>  
 
-              </li>
-              
-            <?php } ?>
-            <?php if ($_SESSION['akses'] == 'wali kelas') {?>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Tugas</span></a>
-                <div class="dropdown-menu">
-                  <a href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/jadwal_jam_mengajar" class="dropdown-item">Jadwal Mengajar</a>
+                </li>
+
+              <?php } ?>
+              <?php if ($_SESSION['akses'] == 'wali kelas') {?>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Tugas</span></a>
+                  <div class="dropdown-menu">
+                    <a href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/jadwal_jam_mengajar" class="dropdown-item">Jadwal Mengajar</a>
                   <!-- <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/jurusan" class="dropdown-item">Jurusan</a>
-                  <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/lokal" class="dropdown-item">Ruangan</a> -->
-                </div>  
+                    <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/lokal" class="dropdown-item">Ruangan</a> -->
+                  </div>  
 
-              </li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Absensi</span></a>
-                <ul class="dropdown-menu multi-level" style="margin-left: 10;">
-                  <li class="nav-item dropdown-submenu" style="width: 80%;">
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Absensi</span></a>
+                  <ul class="dropdown-menu multi-level" style="margin-left: 10;">
+                  <!-- <li class="nav-item dropdown-submenu" style="width: 80%;">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #212529; font-weight: 400; font-size: 1em; margin: 10px; text-decoration: none">Absensi Kelas</a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/absensi_kelas/absensi_harian">Harian</a></li>
@@ -133,8 +134,8 @@ $data=mysqli_fetch_array($query);
                       <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_mingguan">Mingguan</a></li>
                       <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_bulanan">Bulanan</a></li>
                     </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_harian">Absensi Online</a></li>
+                  </li> -->
+                  <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/absensi/absensi_online">Absensi Online</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">

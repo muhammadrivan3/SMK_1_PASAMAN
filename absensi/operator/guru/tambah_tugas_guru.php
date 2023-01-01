@@ -25,7 +25,7 @@ include '../../layout/header.php';
                       $query_dataGuru = mysqli_query($konek,"SELECT * FROM biodata_guru");
                       while($dataGuru = mysqli_fetch_array($query_dataGuru)){ 
                         if($dataGuru['status_guru']!="admin"){?>
-                        <option value="<?php echo $dataGuru['id_guru']; ?>"> <?php echo $dataGuru['nama_guru']; ?></option>
+                        <option value="<?php echo $dataGuru['id_guru']; ?>"> <?php echo strtoupper($dataGuru['nama_guru']); ?></option>
 
                       <?php }}
                       ?>

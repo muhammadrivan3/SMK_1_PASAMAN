@@ -38,6 +38,22 @@ include '../../layout/header.php';
                     </div>
                   </div>
                   <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Ruangan</label>
+                    :
+                    <div class="col-sm-8">
+                      <select name="lokal" class="form-control" id="kelas">
+                        <option value="">Ruangan</option>
+                        <?php 
+                        $queryDataRuangan = mysqli_query($konek, "SELECT * FROM wali_kelas");
+                        while($dataRuangan = mysqli_fetch_array($queryDataRuangan)){
+                          ?>
+                          <option value="<?php echo $dataRuangan['id_wali_kelas']; ?>"> <?php echo $dataRuangan['nama_lokal']; ?></option>
+                        <?php
+                        } ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
                     <label class="col-sm-2 col-form-label">Jurusan</label>
                     :
                     <div class="col-sm-8">
