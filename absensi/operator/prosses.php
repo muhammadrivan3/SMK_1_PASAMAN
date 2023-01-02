@@ -95,7 +95,7 @@
         }
     }else if ($_GET['tipe'] == "lokal") {
         // code...
-        $queryInputJurusan = mysqli_query($konek,"INSERT INTO wali_kelas (id_guru,kelas,nama_lokal)VALUES('$_POST[guru]','$_POST[kelas]','$_POST[lokal]' )");
+        $queryInputJurusan = mysqli_query($konek,"INSERT INTO wali_kelas (guru,kelas,nama_lokal)VALUES('$_POST[guru]','$_POST[kelas]','$_POST[lokal]')");
 
         if ($queryInputJurusan) {
             // code...
