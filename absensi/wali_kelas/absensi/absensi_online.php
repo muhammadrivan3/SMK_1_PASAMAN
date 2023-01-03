@@ -47,13 +47,18 @@ include '../../layout/header.php';
                     <div class="col-1">Jurusan</div>
                     <div class="col">:</div>
                     <div class="col">
-                      <select name="jurusan" class="form-control" id="jurusan" style="width:200px;">
+                      <select name="jurusan" class="form-control" id="jurusan" style="width:200px; margin: ;">
                         <option value="">Jurusan</option>
                         <?php 
                         $queryDataJurusan = mysqli_query($konek, "SELECT * FROM jurusan;");
                        
                         while($dataJurusan = mysqli_fetch_array($queryDataJurusan)){
-                          echo "<option value=".$dataJurusan['id_jurusan'].">".$dataJurusan['nama_jurusan']."</option>";
+                          if ($dataJurusan['kosentrasi_jurusan'] != null) {
+                            // code...
+                            echo "<option value=".$dataJurusan['id_jurusan'].">".$dataJurusan['nama_jurusan']."-".$dataJurusan['kosentrasi_jurusan']."</option>";
+                          }else{
+                            echo "<option value=".$dataJurusan['id_jurusan'].">".$dataJurusan['nama_jurusan']."</option>";
+                          }
                           
                           ?>
                          
@@ -131,15 +136,14 @@ include '../../layout/header.php';
                                     <input type="hidden" name="jam" value="<?PHP echo $get_jam ?>"/>
 
                                     <td><?php echo "".$no++; ?> </td>
-                                    <td><?php echo $items['nama_siswa']?> <?php echo $get_tgl; ?></td>
+                                    <td><?php echo strtoupper($items['nama_siswa']);?></td>
                                     <td>
-
                                       <select name="absensi[]" class="form-control" id="absensi">
                                         <option value=" ">PILIH ABSEN</option>
                                         <?php 
                                         $idSiswa = $items['id_siswa'];
                                         $kodeAbsen = array("H", "A", "S","C");
-                                        $queryAbsensi = "SELECT * FROM absensi_siswa WHERE id_siswa = '$idSiswa' AND tgl_absensi = '$get_tgl' AND id_guru = '".$_SESSION['id_user']."';";
+                                        $queryAbsensi = "SELECT * FROM absensi_siswa WHERE id_siswa = '$idSiswa' AND tgl_absensi = '$get_tgl' AND id_guru = '".$_SESSION['id_user']."' AND id_wali_kelas='".$get_lokal."';";
 
                                         $showAbsensi =mysqli_query($konek,$queryAbsensi);
 
