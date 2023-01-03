@@ -1,5 +1,8 @@
 
- 
+* {
+    margin: 0;
+    padding: 0;
+}
 .banner-image
 {
   background-image: url('../../image/p6.jpg');
@@ -404,9 +407,114 @@ table thead .thFixed {
     border-radius: 6px 0 6px 6px;
 }
 
+.mb-100 {
+    margin-bottom: 30px !important;
+}
+.single-popular-course {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 15%);
+    border-radius: 6px;
+    background-color: #ffffff;
+    width: 30%;
+    /*height: 30%;*/
+}
 
-.card{
-  background-color: #cccccc;
-  width: 30%;
-  height: 300px;
+.single-popular-course img {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    height: 11em;
+    border-radius: 6px 6px 0 0;
+}
+.single-popular-course img {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    height: 11em;
+    border-radius: 6px 6px 0 0;
+}
+.single-popular-course .course-content {
+    padding: 10px;
+}
+.single-popular-course .seat-rating-fee {
+  margin: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #f7f7f7;
+    border-radius: 10px 10px 0 0;
+}
+.single-popular-course .seat-rating-fee .seat-rating div {
+    padding: 0 20px;
+    border-right: 1px solid #ebebeb;
+    height: 100%;
+    line-height: 40px;
+}
+.single-popular-course .seat-rating-fee .course-fee a.kuliah {
+    background-color: #17EF2C;
+}
+.single-popular-course .seat-rating-fee .course-fee a {
+    display: inline-block;
+    padding: 0 10px;
+    width: auto;
+    height: 40px;
+    border-radius: 0 0 6px 0;
+    background-color: #e3d21b;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.75px;
+}
+.blink:nth-child(1) {
+    -webkit-animation: a_blink 0.8s 0s ease-out infinite;
+    -moz-animation: a_blink 0.8s 0s ease-out infinite;
+    animation: a_blink 0.8s 0s ease-out infinite;
+}
+.blink:nth-child(1) {
+}
+.blink {
+    background: #1fd02b;
+    border-radius: 2%;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+    z-index: 1;
+}
+.img-pengampu {
+    width: 40px;
+    height: 50px;
+    margin-top: -55px;
+    float: right;
+    border: 1px solid #eee;
+    padding: 3px;
+}
+.img-pengampu img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+.blink{ background: #1fd02b; border-radius: 2%; cursor: pointer; -webkit-transition: all 0.2s;  -moz-transition: all 0.2s;  transition: all 0.2s;  z-index:1;}
+.blink:nth-child(1) { }
+.blink:nth-child(1) { -webkit-animation: a_blink 0.8s 0s ease-out infinite; -moz-animation: a_blink 0.8s 0s ease-out infinite; animation: a_blink 0.8s 0s ease-out infinite;}
+@-webkit-keyframes a_blink {
+  0% {box-shadow: 0 0 2px 2px rgba(26, 255, 179, 0), 0 0 0px 0px #fff, 0 0 0px 0px rgba(26, 255, 179, 0);  }
+  10% {box-shadow: 0 0 2px 2px #07db16, 0 0 3px 3px #fff, 0 0 2px 3px #07db16;  }
+  100% {box-shadow: 0 0 2px 2px rgba(26, 255, 179, 0), 0 0 0px 2px #fff, 0 0 0px 5px rgba(26, 255, 179, 0);  }
+}
+@-moz-keyframes a_blink {
+  0% {box-shadow: 0 0 2px 2px rgba(26, 255, 179, 0), 0 0 0px 0px #fff, 0 0 0px 0px rgba(26, 255, 179, 0);  }
+  10% {box-shadow: 0 0 2px 2px #07db16, 0 0 3px 3px #fff, 0 0 2px 3px #07db16;  }
+  100% {box-shadow: 0 0 2px 2px rgba(26, 255, 179, 0), 0 0 0px 2px #fff, 0 0 0px 5px rgba(26, 255, 179, 0);  }
+}
+@keyframes a_blink {
+  0% {box-shadow: 0 0 2px 2px rgba(26, 255, 179, 0), 0 0 0px 0px #fff, 0 0 0px 0px rgba(26, 255, 179, 0);  }
+  10% {box-shadow: 0 0 2px 2px #07db16, 0 0 3px 3px #fff, 0 0 2px 3px #07db16;  }
+  100% {box-shadow: 0 0 2px 2px rgba(26, 255, 179, 0), 0 0 0px 2px #fff, 0 0 0px 5px rgba(26, 255, 179, 0);  }
 }

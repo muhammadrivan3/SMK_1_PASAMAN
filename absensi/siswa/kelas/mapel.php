@@ -42,7 +42,7 @@ include '../../layout/header.php';
                         
                         while($dataSiswa = mysqli_fetch_array($queryDataSiswa)){?>
                           <?php
-                          $arrayHari = array('SENIN','SELASA','RABU','KAMIS',"JUM'AT",'SABTU');
+                          $arrayHari = array('SENIN','SELASA','RABU','KAMIS',"JUMAT",'SABTU');
                           foreach($arrayHari as $hari){
                             echo "<tr><td></td><td class='text-center' colspan='3' style='opacity:50%;background-color:#999999; color:white; border-radius: 10px 10px 0 0 ;'>".$hari."</td></tr>";
                         ?>

@@ -53,7 +53,7 @@ include '../../layout/header.php';
                         </tr>
 
 
-                        <?php } ?>
+                        <?php $no++;} ?>
                         
                       </tbody>
                     </table>
