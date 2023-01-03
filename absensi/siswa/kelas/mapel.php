@@ -29,7 +29,6 @@ include '../../layout/header.php';
                       <thead>
                         <tr>
                           <th class="text-center" style="width:3%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">NO</th>
-
                           <th class="text-center" style=" width: 32%; background-color: #404040; color:white;">MATA PELAJARAN</th>
                           <th class="text-center" style="background-color: #404040; color:white;">GURU</th>
                           <th class="text-center" style="background-color: #404040; color:white;">JAM</th>

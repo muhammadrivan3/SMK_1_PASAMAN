@@ -146,9 +146,17 @@ $data=mysqli_fetch_array($query);
                 </ul>
               </li>
               
-              <li class="nav-item">
-                <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
-              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link " data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text"><div class="text-center">
+                  <img src="http://localhost/SMK_1_PASAMAN/absensi/assets/image/guru/<?PHP echo $_SESSION['fotoProfil'] ?>" class="rounded-circle" style="width: 30px; height: 30px;" alt="...">
+                </div></span></a>
+                <div class="dropdown-menu dropdown-menu-end">
+                 <a class="nav-link " style=" color: black;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
+                  <!-- <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/jurusan" class="dropdown-item">Jurusan</a>
+                    <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/lokal" class="dropdown-item">Ruangan</a> -->
+                  </div>  
+
+                </li>
             <?php } ?>
             <?php if ($_SESSION['akses'] == 'siswa') {?>
               <li class="nav-item">
@@ -162,9 +170,14 @@ $data=mysqli_fetch_array($query);
                   <a href="http://localhost/SMK_1_PASAMAN/absensi/siswa/kelas/absensiOnline" class="dropdown-item">Absensi Online</a>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">LOGOUT</a>
-              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link " data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text"><div class="text-center">
+                  <img src="http://localhost/SMK_1_PASAMAN/absensi/assets/image/siswa/<?PHP echo $_SESSION['fotoProfil'] ?>" class="rounded-circle" style="width: 30px; height: 30px;" alt="...">
+                </div></span></a>
+                <div class="dropdown-menu dropdown-menu-end">
+                 <a class="nav-link " style=" color: black;" href="http://localhost/SMK_1_PASAMAN/absensi/logout.php?id=<?PHP echo $_SESSION['id_user']; ?>">Logout</a>
+                  </div>
+                </li>
             <?php } ?>
 
           </ul>
