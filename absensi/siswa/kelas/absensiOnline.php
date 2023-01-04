@@ -48,7 +48,7 @@ include '../../layout/header.php';
                   <div class="course-content">
                     <h4><?php echo strtoupper($dataAbsensiOnline['nama_mapel']); ?></h4>
                     <div class="meta  align-items-center">
-                      <h6><?php echo strtoupper($dataAbsensiOnline['nama_guru']); ?></h6>
+                      <h6><?php $guruMengajar = $dataAbsensiOnline['id_guru'];echo strtoupper($dataAbsensiOnline['nama_guru']); ?></h6>
                     </div>           
                     <table border="0" width="100%">
                      <tbody><tr><td width="100"><i class="fa fa-calendar"></i> Hari </td><td>: <?php echo $dataAbsensiOnline['hari']; ?></td></tr><tr>
@@ -74,10 +74,11 @@ include '../../layout/header.php';
                       </div>
                     </div>
                     <div class="course-fee h-100">
+                      <a href="../prosses.php?tipe=absen_siswa&guru=<?php echo $guruMengajar; ?>&jam=<?php echo $dataAbsensiOnline['jam_mulai']; ?>" class="kuliah blink">Masuk</a>
                       <?php date_default_timezone_set('Asia/Jakarta'); ?>
-                      <?php $waktuSekarang = date('h:i:s'); ?>
+                      <?php $waktuSekarang = date('H:i:s'); ?>
                       <?php if ($dataAbsensiOnline['jam_mulai'] <= $waktuSekarang && $dataAbsensiOnline['jam_berakhir']>= $waktuSekarang) {?>
-                      <a href="#" class="kuliah blink">MASUK</a> 
+                      <a href="../prosses.php?tipe=absen_siswa&id_siswa=<?php echo $_SESSION['id_siswa']; ?>" class="kuliah blink">MASUK</a> 
                       <?php  
                       } ?>                           
                     </div>
