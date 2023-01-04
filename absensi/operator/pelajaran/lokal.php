@@ -33,21 +33,32 @@
                           <thead>
                             <tr>
                               <th class="text-center" style="width:5%;background-color: #404040; color:white;border-radius: 10px 0 0 0 ;">NO</th>
-                              <th class="text-center" style="width:5%;background-color: #404040; color:white;" >KELAS</th>
+                              
                               <th class="text-center" style="background-color: #404040; color:white;" >NAMA LOKAL</th>
+                              <th class="text-center" style="width:5%;background-color: #404040; color:white;" >KELAS</th>
                               <th class="text-center" style="background-color: #404040; color:white;" >WALI KELAS</th>
                               <th class="text-center" colspan="2" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;">OPTION</th>
                           </tr>
                           </thead>
                           <tbody>
                             <?php 
-                            $queryDataWaliKelas = mysqli_query($konek,"SELECT * FROM wali_kelas JOIN biodata_guru ON wali_kelas.guru = biodata_guru.id_guru");
+                            $batas = 10;
+                        $halaman = @$_GET['halaman'];
+                        if(empty($halaman)){
+                          $posisi     = 0;
+                          $halaman    = 1;
+                        }
+                        else{
+                          $posisi = ($halaman-1) * $batas;
+                        }
+                            $queryDataWaliKelas = mysqli_query($konek,"SELECT * FROM wali_kelas JOIN biodata_guru ON wali_kelas.guru = biodata_guru.id_guru limit $posisi,$batas");
                             $no=1;
                             while($dataWaliKelas = mysqli_fetch_array($queryDataWaliKelas)) {?>
                            <tr>
                              <td><?php echo $no; ?></td>
-                             <td><?php echo $dataWaliKelas['kelas']; ?></td>
                              <td><?php echo $dataWaliKelas['nama_lokal']; ?></td>
+                             <td><?php echo $dataWaliKelas['kelas']; ?></td>
+                             
                              <td><?php echo strtoupper($dataWaliKelas['nama_guru']); ?></td>
                            </tr>
                          <?php $no++;} ?>
@@ -55,7 +66,30 @@
                           </tbody>
                         </table>
                         <!-- A button to open the popup form -->
-                        
+                        <!--awal menentukan banyaknya halaman pagination-->
+                        <?php
+                        $query2 = mysqli_query($konek, "SELECT * FROM wali_kelas");
+                        $jumlahdata = mysqli_num_rows($query2);
+                        $jumlahhalaman = ceil($jumlahdata/$batas);
+                        ?>
+                        <!--akhir menentukan banyaknya halaman pagination-->
+
+                        <!--awal navigasi pagination-->
+                        <nav>
+                          <ul class="pagination justify-content-center">
+                            <?php
+                            for($i=1;$i<=$jumlahhalaman;$i++) {
+                              if ($i != $halaman) {
+                                echo "<li class='page-item'><a class='page-link' href='lokal.php?halaman=$i'>$i</a></li>";
+                              } 
+                              else {
+                                echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
+                              }
+                            }
+                            ?>
+                          </ul>
+                        </nav>
+                        <!--akhir navigasi pagination-->
                     </div>
                   </div>
                 </div>
@@ -67,6 +101,7 @@
     </div>
   </div>
 </div>
-<script src="../../js/custom/custom.js"></script>
+</div>
+<script src="../../assets/js/custom/custom.js"></script>
 <!--end-main-container-part-->
 <?php include '../../layout/footer.php'; ?>

@@ -41,57 +41,85 @@ include "../../layout/header.php"
                         </tr>
                       </thead>
                       <tbody>
-                      <?php 
-                       $queryDataGuru = mysqli_query($konek,"SELECT * FROM biodata_guru");
-                       $no = 1;
-                       while($dataGuru = mysqli_fetch_array($queryDataGuru)){
-                        if($dataGuru['status_guru']!= "admin"){
+                        <?php 
+                        //menentukan banyak nya data yang akan ditampilkan dalam 1 halaman
+                        $batas = 10;
+                        $halaman = @$_GET['halaman'];
+                        if(empty($halaman)){
+                          $posisi     = 0;
+                          $halaman    = 1;
+                        }
+                        else{
+                          $posisi = ($halaman-1) * $batas;
+                        }
+                        // $no = $posisi+1;
+                        $queryDataGuru = mysqli_query($konek,"SELECT * FROM biodata_guru limit $posisi,$batas");
+                        $no = 1;
+                        while($dataGuru = mysqli_fetch_array($queryDataGuru)){
+                          if($dataGuru['status_guru']!= "admin"){
 
 
+                            ?>
+
+                            <tr>
+                              <td class="text-center"><?php echo $no; ?></td>
+                              <td class="text-center"><?php echo strtoupper($dataGuru['nama_guru']); ?><br> NIP : <?php echo $dataGuru['nip_guru']; ?> </td>
+                              <td class="text-center" style="widtd:5%;"><?php echo $dataGuru['jenis_kelamin_guru']; ?></td>
+                              <td class="text-center"><?php echo $dataGuru['tgl_lahir_guru']; ?></td>
+                              <td class="text-center"><?php echo $dataGuru['alamat_guru']; ?></td>
+                              <td class="text-center"><?php echo $dataGuru['status_guru']; ?></td>
+                              <td class="text-center"><?php echo $dataGuru['jabatan_guru']; ?></td>
+                              <td class="text-center"><?php echo $dataGuru['telepon_guru']; ?></td>
+                              <td class="text-center" colspan="2">Option</td>
+                            </tr>
+                            <?php $no++;}} 
+                            ?>
+                          </tbody>
+                        </table>
+                        <!--awal menentukan banyaknya halaman pagination-->
+                        <?php
+                        $query2 = mysqli_query($konek, "SELECT * FROM biodata_guru");
+                        $jumlahdata = mysqli_num_rows($query2);
+                        $jumlahhalaman = ceil($jumlahdata/$batas);
                         ?>
+                        <!--akhir menentukan banyaknya halaman pagination-->
 
-                        <tr>
-                        <td class="text-center"><?php echo $no; ?></td>
-                        <td class="text-center"><?php echo strtoupper($dataGuru['nama_guru']); ?><br> NIP : <?php echo $dataGuru['nip_guru']; ?> </td>
-                        <td class="text-center" style="widtd:5%;"><?php echo $dataGuru['jenis_kelamin_guru']; ?></td>
-                        <td class="text-center"><?php echo $dataGuru['tgl_lahir_guru']; ?></td>
-                        <td class="text-center"><?php echo $dataGuru['alamat_guru']; ?></td>
-                        <td class="text-center"><?php echo $dataGuru['status_guru']; ?></td>
-                        <td class="text-center"><?php echo $dataGuru['jabatan_guru']; ?></td>
-                        <td class="text-center"><?php echo $dataGuru['telepon_guru']; ?></td>
-                        <td class="text-center" colspan="2">Option</td>
-                      </tr>
-                       <?php $no++;}} 
-                       ?>
-                      <!-- <tr>
-                        <td class="text-center">2</td>
-                        <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
-                        <td class="text-center" style="widtd:5%;">L</td>
-                        <td class="text-center">24-08-1988</td>
-                        <td class="text-center">Pasaman Baru</td>
-                        <td class="text-center">PNS</td>
-                        <td class="text-center">Kepala Sekolah</td>
-                        <td class="text-center">0812xxx</td>
-                        <td class="text-center" colspan="2">Option</td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">3</td>
-                        <td class="text-center">EDI SUPARNI,S.Pd.M.Pd.T <br> Nip : 19770705 </td>
-                        <td class="text-center" style="widtd:5%;">L</td>
-                        <td class="text-center">24-08-1988</td>
-                        <td class="text-center">Pasaman Baru</td>
-                        <td class="text-center">PNS</td>
-                        <td class="text-center">Kepala Sekolah</td>
-                        <td class="text-center">0812xxx</td>
-                        <td class="text-center" colspan="2">Option</td>
-                      </tr> -->
-                    </tbody>
-                  </table>
-
-                </div>
-                <div class="widget-content">
-                  <div id="placeholder"></div>
-                  <p id="choices"></p>
+                        <!--awal navigasi pagination-->
+                        <nav>
+                          <ul class="pagination justify-content-center">
+                            <?php
+                            for($i=1;$i<=$jumlahhalaman;$i++) {
+                              if ($i != $halaman) {
+                                echo "<li class='page-item'><a class='page-link' href='daftar_guru.php?halaman=$i'>$i</a></li>";
+                              } 
+                              else {
+                                echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
+                              }
+                            }
+                            ?>
+                          </ul>
+                        </nav>
+                        <!--akhir navigasi pagination-->
+                        <!-- <nav aria-label="Page navigation example">
+                          <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                              <a class="page-link" href="#">Next</a>
+                            </li>
+                          </ul>
+                        </nav> -->
+                      </div>
+                      <div class="widget-content">
+                        <div id="placeholder"></div>
+                        <p id="choices"></p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -101,7 +129,11 @@ include "../../layout/header.php"
     </div>
   </div>
 </div>
-<script src="../../js/custom/custom.js"></script>
+      <script src="../../assets/js/custom/custom.js"></script>
+      <!-- <script src="../../assets/tables/js/jquery-3.6.3.js"></script>
+      <script src="../../assets/tables/js/dataTables.bootstrap.js"></script>
+      <script src="../../assets/tables/js/dataTables.bootstrap5.js"></script>
+      <script src="../../assets/tables/js/jquery.dataTables.js"></script> -->
 <!-- <script type="text/javascript">
   var nav = document.querySelector('nav');
 
@@ -113,6 +145,6 @@ include "../../layout/header.php"
     }
   });
 </script>
- -->
+-->
 <!--end-main-container-part-->
 <?php include '../../layout/footer.php'; ?>

@@ -44,7 +44,16 @@ include '../../layout/header.php';
                       <tbody>
 
                         <?php
-                        $queryGetGuru = mysqli_query($konek,"SELECT * FROM biodata_guru ");
+                        $batas = 10;
+                        $halaman = @$_GET['halaman'];
+                        if(empty($halaman)){
+                          $posisi     = 0;
+                          $halaman    = 1;
+                        }
+                        else{
+                          $posisi = ($halaman-1) * $batas;
+                        }
+                        $queryGetGuru = mysqli_query($konek,"SELECT * FROM biodata_guru limit $posisi,$batas");
                         $no=1;
                         while($dataGuru=mysqli_fetch_array($queryGetGuru)){
                           if ($dataGuru['status_guru']!="admin") {
@@ -148,6 +157,29 @@ include '../../layout/header.php';
                             ?>
                       </tbody>
                     </table>
+                    <!--awal menentukan banyaknya halaman pagination-->
+                        <?php
+                        $query2 = mysqli_query($konek, "SELECT * FROM biodata_guru");
+                        $jumlahdata = mysqli_num_rows($query2);
+                        $jumlahhalaman = ceil($jumlahdata/$batas);
+                        ?>
+                        <!--akhir menentukan banyaknya halaman pagination-->
+
+                        <!--awal navigasi pagination-->
+                        <nav>
+                          <ul class="pagination justify-content-center">
+                            <?php
+                            for($i=1;$i<=$jumlahhalaman;$i++) {
+                              if ($i != $halaman) {
+                                echo "<li class='page-item'><a class='page-link' href='tugas_guru.php?halaman=$i'>$i</a></li>";
+                              } 
+                              else {
+                                echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
+                              }
+                            }
+                            ?>
+                          </ul>
+                        </nav>
                   </div>
                   <div class="widget-content">
                     <div id="placeholder"></div>
@@ -162,6 +194,6 @@ include '../../layout/header.php';
     </div>
   </div>
 </div>
-<script src="../../js/custom/custom.js"></script>
+<script src="../../assets/js/custom/custom.js"></script>
 <!--end-main-container-part-->
 <?php include '../../layout/footer.php'; ?>
