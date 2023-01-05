@@ -11,8 +11,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="assets/css/custom/style.css">
-
-
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" /> 
 		<link rel="stylesheet" href="assets/css/bootstrap-responsive.min.css" /> 
     <link rel="stylesheet" href="assets/css/custom/login_style.css" />
@@ -41,7 +39,7 @@
               <div class="mx-auto"></div>
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="http://localhost/absensi_siswa">Home</a>
+                  <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="http://localhost/SMK_1_PASAMAN/absensi/">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="#">About</a>
@@ -82,12 +80,9 @@
             </div>
             <input type="submit" value="login" name="login" />
             </form>
-            
         </div>
     </div>
-
     <br>
-
     <!-- FOOTER -->
     <footer class="bg-dark text-center text-white" style="position: absolute; bottom: 0; width: 100%;">
     <!-- Grid container -->

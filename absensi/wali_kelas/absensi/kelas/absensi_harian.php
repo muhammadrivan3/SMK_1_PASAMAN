@@ -26,18 +26,13 @@ include '../../layout/header.php';
                               style="width:5%; border-radius: 10px 0 0 0 ;" rowspan="3">No</th>
                               <th class="text-center thFixed " rowspan="3" style="min-width:300px;" >Nama/Nis  </th>
                               <th class="text-center thFixed " rowspan="1" colspan="10" >Hari</th>
-                              
                               <th class="text-center thFixed" rowspan="2" colspan="5" style="">Total</th>
                               <th class="text-center thFixed " rowspan="3" style="min-width:300px;border-radius: 0 10px 0 0;">Keterangan</th>
-                              
                             </tr>
                            <tr>
                               <th  colspan="10" class="text-center thFixed">Senin</th>
-                              
-                              <!-- <th style="width:100%;" class="text-center thFixed">Minggu</th> -->
                             </tr>
                             <tr>
-
                               <?php 
                               $loop_jam = 1;
                               for ($loop_jam; $loop_jam<2; $loop_jam++) { 
@@ -56,7 +51,7 @@ include '../../layout/header.php';
 
                         </thead>
                         <tbody>
-                            <tr>
+                            <!-- <tr>
                               <td>1</td>
                               <td style="width:300px;">Muhammad Rivan</td>
                               <td>H</td>
@@ -77,7 +72,7 @@ include '../../layout/header.php';
                               <td>0</td>
                               <td>0</td>
                               <td>Jam ke-1 Dia Hadir, Namun Dia Cabut Di Jam Ke-5, Emang Kelakuan Dia Kayak Gitu, Aneh Ananda Ini</td>
-                            </tr>
+                            </tr> -->
 
                             
                           </tbody>

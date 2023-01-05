@@ -38,7 +38,7 @@ $data=mysqli_fetch_array($query);
 			<div class="mx-auto"></div>
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="#">Home</a>
+					<a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="http://localhost/SMK_1_PASAMAN/absensi/">Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="#">About</a>
@@ -46,7 +46,7 @@ $data=mysqli_fetch_array($query);
 				<li class="nav-item">
 					<a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="#">Contact</a>
 				</li>
-				<a class="btn btn-outline-info" style="margin: 5px; color:white; border-color: #0099cc;" href="http://localhost/absensi_siswa/login.php" role="button">MASUK</a>
+				<a class="btn btn-outline-info" style="margin: 5px; color:white; border-color: #0099cc;" href="http://localhost/SMK_1_PASAMAN/absensi/login" role="button">MASUK</a>
 			</ul>
 		</div>
 	</div>

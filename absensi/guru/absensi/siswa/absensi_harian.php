@@ -29,12 +29,15 @@ include '../../layout/header.php';
                               
                               <th class="text-center thFixed" rowspan="2" colspan="5" style="">Total</th>
                               <th class="text-center thFixed " rowspan="3" style="min-width:300px;border-radius: 0 10px 0 0;">Keterangan</th>
+                              
                             </tr>
                            <tr>
                               <th  colspan="10" class="text-center thFixed">Senin</th>
+                              
                               <!-- <th style="width:100%;" class="text-center thFixed">Minggu</th> -->
                             </tr>
                             <tr>
+
                               <?php 
                               $loop_jam = 1;
                               for ($loop_jam; $loop_jam<2; $loop_jam++) { 

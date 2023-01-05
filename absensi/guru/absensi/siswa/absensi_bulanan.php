@@ -19,30 +19,37 @@ include '../../layout/header.php';
                     <div class="widget-title">
                       <div style="overflow-x:auto;">
                         <table class="table table-bordered" style="width:100%;">
-                          <caption id="caption">Absensi Harian</caption>
+                          <caption id="caption">Absensi Bulanan</caption>
                           <thead>
                             <tr>
                               <th class="text-center thFixed"
                               style="width:5%; border-radius: 10px 0 0 0 ;" rowspan="3">No</th>
-                              <th class="text-center thFixed " rowspan="3" style="min-width:300px;" >Nama/Nis  </th>
-                              <th class="text-center thFixed " rowspan="1" colspan="10" >Hari</th>
+                              <th class="text-center thFixed " rowspan="2" style="min-width:300px;" >Nama/Nis  </th>
+                              <th class="text-center thFixed " rowspan="1" colspan="31" >Bulanan</th>
+                              <th class="text-center thFixed" rowspan="1" colspan="5" >Total</th>
+                              <th class="text-center thFixed " rowspan="2" style="min-width:300px;border-radius: 0 10px 0 0;">Keterangan</th>
                               
-                              <th class="text-center thFixed" rowspan="2" colspan="5" style="">Total</th>
-                              <th class="text-center thFixed " rowspan="3" style="min-width:300px;border-radius: 0 10px 0 0;">Keterangan</th>
                             </tr>
-                           <tr>
+                           <!-- <tr>
                               <th  colspan="10" class="text-center thFixed">Senin</th>
-                              <!-- <th style="width:100%;" class="text-center thFixed">Minggu</th> -->
-                            </tr>
+                              <th  colspan="10" class="text-center thFixed">Selasa</th>
+                              <th  colspan="10" class="text-center thFixed">Rabu</th>
+                              <th  colspan="10" class="text-center thFixed">Kamis</th>
+                              <th  colspan="10" class="text-center thFixed">Jum'at</th>
+                              <th  colspan="10" class="text-center thFixed">Sabtu</th>
+                              <th style="width:100%;" class="text-center thFixed">Minggu</th>
+                            </tr> -->
                             <tr>
+
                               <?php 
                               $loop_jam = 1;
-                              for ($loop_jam; $loop_jam<2; $loop_jam++) { 
-                               for ($i=1; $i <= 10; $i++) { 
+                              for ($loop_jam; $loop_jam<32; $loop_jam++) { 
+                               // for ($i=1; $i <= 10; $i++) { 
                                 ?>
-                                <th style="width: 2%;"><?php echo $i; ?></th>
+                                <th style="width: 2%;"><?php echo $loop_jam; ?></th>
 
-                              <?php }
+                              <?php
+                               // }
                             } ?>
                             <th class="text-center thFixed">H</th>
                             <th class="text-center thFixed">I</th>
@@ -60,7 +67,28 @@ include '../../layout/header.php';
                               <td>H</td>
                               <td>H</td>
                               <td>H</td>
-                              <td>C</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
+                              <td>H</td>
                               <td>H</td>
                               <td>H</td>
                               <td>H</td>
@@ -73,7 +101,7 @@ include '../../layout/header.php';
                               <td>0</td>
                               <td>0</td>
                               <td>0</td>
-                              <td>Jam ke-1 Dia Hadir, Namun Dia Cabut Di Jam Ke-5, Emang Kelakuan Dia Kayak Gitu, Aneh Ananda Ini</td>
+                              <td>Dalam Bulan Ini, Siswa yang bersangkutan ada Kemajuan Untuk Bolos Sekolah</td>
                             </tr>
 
                             
