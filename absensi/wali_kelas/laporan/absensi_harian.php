@@ -26,7 +26,6 @@ include '../../layout/header.php';
                       <option value="XII">XII</option>
                     </select>
                   </div>
-
                   <div class="col-1">Lokal</div>
                   <div class="col">:</div>
                   <div class="col-2">
@@ -72,7 +71,7 @@ include '../../layout/header.php';
                 </div>
 
                 <br>
-                <div class="row row-cols-auto">
+                <!-- <div class="row row-cols-auto">
                   <div class="col-1">Jam Ke- :</div>
                   <div class="col">:</div>
                   <div class="col">
@@ -85,7 +84,7 @@ include '../../layout/header.php';
                         ?>
                       <?php } ?>
                     </select>
-                  </div>
+                  </div> -->
                   <div class="col">
                     <button style="padding-top: calc(0.375rem + 1px);
                     padding-bottom: calc(0.375rem + 1px);
@@ -167,7 +166,7 @@ include '../../layout/header.php';
 
                                   if(mysqli_num_rows($queryDataAbsensiSiswa) > 0){
                                     while($dataSiswa = mysqli_fetch_array($queryDataAbsensiSiswa)){
-                                      echo "<td>".$dataSiswa['absensi']."</td>";
+                                      
                                       if ($dataSiswa['absensi']=='H') {
                                             // code...
                                         $hadir++;
@@ -184,10 +183,13 @@ include '../../layout/header.php';
                                             // code...
                                         $sakit++;
                                       }
+                                      if ($dataSiswa['absensi']=="C" || $dataSiswa['absensi']=="A") {
+                                        // code...
+                                        echo "<td style='color:red;'>".$dataSiswa['absensi']."</td>";
+                                      }else{
+                                        echo "<td>".$dataSiswa['absensi']."</td>";
+                                      }
                                     }
-                                    
-                                    
-
                                   }else{
                                     echo "<td></td>";
                                   }
@@ -203,30 +205,7 @@ include '../../layout/header.php';
                             }
                           }}
                           ?>
-                            <!-- <tr>
-                              <td>1</td>
-                              <td style="width:300px;">Muhammad Rivan</td>
-                              <td>H</td>
-                              <td>H</td>
-                              <td>H</td>
-                              <td>H</td>
-                              <td>C</td>
-                              <td>H</td>
-                              <td>H</td>
-                              <td>H</td>
-                              <td>H</td>
-                              <td>H</td>
-                              
-                              
-                              <td>60</td>
-                              <td>0</td>
-                              <td>0</td>
-                              <td>0</td>
-                              <td>0</td>
-                              <td>Jam ke-1 Dia Hadir, Namun Dia Cabut Di Jam Ke-5, Emang Kelakuan Dia Kayak Gitu, Aneh Ananda Ini</td>
-                            </tr> -->
-
-                            
+                           
                           </tbody>
                         </table>
                       </div>
