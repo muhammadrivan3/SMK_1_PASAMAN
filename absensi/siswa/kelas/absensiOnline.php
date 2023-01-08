@@ -14,6 +14,7 @@ include '../../layout/header.php';
               <hr>
               <div class="row">
                 <?php 
+                date_default_timezone_set('Asia/Jakarta');
                 $hari = date('l');
                 if ($hari == "Monday") {
                   // code...
@@ -78,7 +79,7 @@ include '../../layout/header.php';
                       <?php date_default_timezone_set('Asia/Jakarta'); ?>
                       <?php $waktuSekarang = date('H:i:s A'); ?>
                       <?php if ($dataAbsensiOnline['jam_mulai'] <= $waktuSekarang && $dataAbsensiOnline['jam_berakhir']>= $waktuSekarang) {?>
-                        <a href="detailAbsensiOnline?id_AbsensiKelas=<?php echo $dataAbsensiOnline['id_jam_mengajar']; ?>&jamKe=<?php echo $jamKe; ?> &hari=<?php echo $hari; ?>" class="kuliah blink">Masuk</a>
+                        <a href="detailAbsensiOnline?id_AbsensiKelas=<?php echo $dataAbsensiOnline['id_jam_mengajar']; ?>&jamKe=<?php echo $jamKe; ?> &hari=<?php echo $hari; ?>&guru=<?php echo $guruMengajar; ?>" class="kuliah blink">Masuk</a>
                       <!-- <a href="../prosses.php?tipe=absen_siswa&guru=<?php echo $guruMengajar; ?>&jam=<?php echo $dataAbsensiOnline['jam_mulai']; ?>" class="kuliah blink">Masuk</a>  -->
                       <?php  
                       }else{ ?>

@@ -21,10 +21,10 @@ include '../../layout/header.php';
                   $queryCheckAbsen = "SELECT * FROM absensi_siswa WHERE id_siswa=".$_SESSION['id_user']." AND tgl_absensi='".$hari."' AND jam_absensi=".$_GET['jamKe'];
                   $showCheck =mysqli_query($konek,$queryCheckAbsen);
                   if(mysqli_num_rows($showCheck)>0){ ?>
-                    <a href="#" class="kuliah blink" style="padding: 10px; color:white; margin-top:30px; text-align:center;">HADIR</a>
+                    <a href="#" class="pendding" style="padding: 10px; color:white; margin-top:30px; text-align:center; background-color: #808080;">HADIR</a>
                     <?php }else{ ?>
 
-                      <a href="../prosses.php?tipe=absen_siswa&jamKe=<?php echo $_GET['jamKe']; ?>" class="kuliah blink" style="padding: 10px; color:white; margin-top:30px; text-align:center;">Masuk</a>
+                      <a href="../prosses.php?tipe=absen_siswa&jamKe=<?php echo $_GET['jamKe']; ?>&guru=<?php echo $_GET['guru']; ?>" class="kuliah blink" style="padding: 10px; color:white; margin-top:30px; text-align:center;">Masuk</a>
                       <!-- <a href="detailAbsensiOnline?tipe=absen_siswa&guru=<?php echo $guruMengajar; ?>&jam=<?php echo $dataAbsensiOnline['jam_mulai']; ?>" class="kuliah blink" style="padding: 10px; color:white; margin-top:30px; text-align:center;">Masuk</a> -->
                       <?php }
                       ?>
