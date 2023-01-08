@@ -52,7 +52,13 @@ include '../../layout/header.php';
                           $posisi = ($halaman-1) * $batas;
                         }
                           $queryDataJurusan = mysqli_query($konek,"SELECT * FROM jurusan JOIN biodata_guru ON jurusan.kaproka_jurusan = biodata_guru.id_guru limit $posisi,$batas");
+                          if ($posisi !=0) {
+                          // code...
+
+                        $no = $posisi;
+                        }else{
                           $no=1;
+                        }
                           while($dataJurusan = mysqli_fetch_array($queryDataJurusan)){
                             ?>
                           <tr>

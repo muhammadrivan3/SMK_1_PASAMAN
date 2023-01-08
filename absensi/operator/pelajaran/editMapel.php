@@ -21,7 +21,7 @@ include '../../layout/header.php';
                 while($dataMapel = mysqli_fetch_array($queryGetData)){ 
                   ?>
 
-                <form action="../prosses.php?tipe=mapel" method="post" class="form-container" style="margin:10px" autocomplete="false">
+                <form action="../prosses.php?edit=mapel" method="post" class="form-container" style="margin:10px" autocomplete="false">
                   <h1>Tambahkan Mata Pelajaran</h1>
                   <input  type="hidden" name="id_mapel" value=<?php echo $dataMapel['id_mapel']; ?> >
                   <div class="row mb-3">
@@ -57,7 +57,7 @@ include '../../layout/header.php';
 
                     <div class="col-sm-10 offset-sm-2">
                       <!-- <a type="batal" value="Batal" name="batal" style="width:25%; background: #ff3333;"  href=""> BATAL</a> -->
-                      <input type="batal" value="Batal" name="batal" onclick="closeForm('mapel')" style="width:25%; background: #ff3333;" />
+                      <input type="batal" value="Kembali" name="batal" onclick="closeForm('mapel')" style="width:25%; background: #ff3333;" />
                       <input type="submit" value="Simpan" name="simpan"style="width:25%;" />
                     </div>
                   </div>

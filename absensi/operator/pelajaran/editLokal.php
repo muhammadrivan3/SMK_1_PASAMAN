@@ -20,7 +20,7 @@ include '../../layout/header.php';
               $queryGetData = mysqli_query($konek,"SELECT * FROM wali_kelas WHERE id_wali_kelas=".$_GET['id_ruangan']);
                 while($dataRuangan = mysqli_fetch_array($queryGetData)){ 
                   ?>
-                <form action="../prosses.php?tipe=lokal" method="post" class="form-container" style="margin:10px" autocomplete="false">
+                <form action="../prosses.php?edit=lokal" method="post" class="form-container" style="margin:10px" autocomplete="false">
                   <h1>Tambahkan RUANGAN</h1>
                   <input  type="hidden" name="id_ruangan" value=<?php echo $dataRuangan['id_wali_kelas']; ?> >
                   <div class="row mb-3">
@@ -68,7 +68,7 @@ include '../../layout/header.php';
                   </div>
                   <div class="row mb-3">
                     <div class="col-sm-10 offset-sm-2">
-                      <input type="batal" value="Batal" name="batal" onclick="closeForm('lokal')" style="width:25%; background: #ff3333;" />
+                      <input type="batal" value="Kembali" name="batal" onclick="closeForm('lokal')" style="width:25%; background: #ff3333;" />
                       <input type="submit" value="Simpan" name="simpan"style="width:25%;" />
                     </div>
                   </div>

@@ -30,7 +30,7 @@ include '../../layout/header.php';
                   }
                  ?>
                 
-                <form action="../prosses.php?tipe=jamMengajar" method="post" class="form-container" style="margin:10px" autocomplete="false">
+                <form action="../prosses.php?edit=jamMengajar" method="post" class="form-container" style="margin:10px" autocomplete="false">
                   <h1>Tambahkan Jam Mengajar</h1>
                   <div class="row mb-3">
                     <label class="col-sm-2 col-form-label">Kelas</label>

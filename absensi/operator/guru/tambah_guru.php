@@ -89,12 +89,14 @@ include '../../layout/header.php';
                   <div class="col-sm-8">
                     <select name="jabatan" class="form-control" id="jabatan">
                       <option value="">Pilih Jabatan</option>
-                      <option value="kepala sekolah">Kepala Sekolah</option>
-                      <option value="wakil kepala sekolah">Wakil Kepala Sekolah</option>
-                      <option value="bendahara">Bendahara/Kepala Yayasan</option>
-                      <option value="kaproka">Kaproka</option>
-                      <option value="wali kelas">Wali Kelas</option>
-                      <option value="guru">Guru</option>
+                      <?php
+                      $arrJabatan = array('kepala sekolah'=>'Kepala Sekolah','wakil kepala sekolah'=>'Wakil Kepala Sekolah',
+                        'bendahara/kepala yayasan'=>'Bendahara/Kepala Yayasan','kaproka'=>'Kaproka', 'wali kelas'=>'Wali Kelas', 'guru'=>'Guru',);
+                      foreach ($arrJabatan as $key => $value) {
+                        // code...
+                        echo "<option value=".$key.">".$value."</option>";
+                      }
+                       ?>
                     </select>
                   </div>
                 </div>
@@ -115,7 +117,7 @@ include '../../layout/header.php';
               </div>
               <div class="row mb-3">
                 <div class="col-sm-10 offset-sm-2">
-                  <input type="batal" value="Batal" name="batal" onclick="closeForm('daftar_guru')" style="width:25%; background: #ff3333;" />
+                  <input type="batal" value="Kembali" name="batal" onclick="closeForm('daftar_guru')" style="width:25%; background: #ff3333;" />
                   <input type="submit" value="Simpan" name="simpan" style="width:25%;" />
                 </div>
               </div>

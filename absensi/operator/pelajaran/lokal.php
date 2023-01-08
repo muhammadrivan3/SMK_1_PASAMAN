@@ -52,7 +52,13 @@
                           $posisi = ($halaman-1) * $batas;
                         }
                             $queryDataWaliKelas = mysqli_query($konek,"SELECT * FROM wali_kelas JOIN biodata_guru ON wali_kelas.guru = biodata_guru.id_guru limit $posisi,$batas");
-                            $no=1;
+                            if ($posisi !=0) {
+                          // code...
+
+                        $no = $posisi;
+                        }else{
+                          $no=1;
+                        }
                             while($dataWaliKelas = mysqli_fetch_array($queryDataWaliKelas)) {?>
                            <tr>
                              <td><?php echo $no; ?></td>

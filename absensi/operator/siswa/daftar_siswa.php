@@ -54,7 +54,13 @@ include '../../layout/header.php';
                           $posisi = ($halaman-1) * $batas;
                         }
                           $queryDataSiswa = mysqli_query($konek, "SELECT * FROM biodata_siswa JOIN wali_kelas ON biodata_siswa.lokal_siswa = wali_kelas.id_wali_kelas JOIN jurusan ON biodata_siswa.jurusan_siswa = jurusan.id_jurusan limit $posisi,$batas");
+                          if ($posisi !=0) {
+                          // code...
+
+                        $no = $posisi;
+                        }else{
                           $no=1;
+                        }
                           while ($dataSiswa = mysqli_fetch_array($queryDataSiswa)) {
                            ?>
                            <tr>

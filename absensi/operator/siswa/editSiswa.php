@@ -19,7 +19,7 @@ include '../../layout/header.php';
               $queryGetData = mysqli_query($konek,"SELECT * FROM biodata_siswa WHERE id_siswa=".$_GET['id_siswa']);
                 while($dataSiswa = mysqli_fetch_array($queryGetData)){ 
                   ?>
-              <form action="../prosses.php?tipe=siswa" method="post" enctype="multipart/form-data" class="form-container" style="margin:10px" autocomplete="false">
+              <form action="../prosses.php?edit=siswa" method="post" enctype="multipart/form-data" class="form-container" style="margin:10px" autocomplete="false">
                 <h1>Tambahkan Siswa</h1>
                 <input  type="hidden" name="id_siswa" value=<?php echo $dataSiswa['id_siswa']; ?> >
                 <div class="row mb-3">

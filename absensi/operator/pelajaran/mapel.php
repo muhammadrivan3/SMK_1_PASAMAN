@@ -52,7 +52,13 @@ include '../../layout/header.php';
                           $posisi = ($halaman-1) * $batas;
                         }
                         $queryDataMapel = mysqli_query($konek,"SELECT * FROM mapel JOIN jurusan ON mapel.Kosentrasi = jurusan.id_jurusan limit $posisi,$batas");
-                        $no=1;
+                        if ($posisi !=0) {
+                          // code...
+
+                        $no = $posisi;
+                        }else{
+                          $no=1;
+                        }
                         while($dataMapel = mysqli_fetch_array($queryDataMapel)){?>
                           <tr>
                           <td class="text-center"><?php echo $no; ?></td>

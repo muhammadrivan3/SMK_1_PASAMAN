@@ -64,7 +64,13 @@ include '../../layout/header.php';
                         }
 
                         $queryDataGuru = mysqli_query($konek,"SELECT * FROM biodata_guru limit $posisi,$batas");
-                        $no=1;
+                        if ($posisi !=0) {
+                          // code...
+
+                        $no = $posisi;
+                        }else{
+                          $no=1;
+                        }
                         while($dataGuru = mysqli_fetch_array($queryDataGuru)){
                           if($dataGuru['jabatan_guru'] != "admin"){
                             ?>

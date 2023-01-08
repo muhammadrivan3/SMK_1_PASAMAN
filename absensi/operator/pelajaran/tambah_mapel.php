@@ -60,7 +60,7 @@ include '../../layout/header.php';
 
                     <div class="col-sm-10 offset-sm-2">
                       <!-- <a type="batal" value="Batal" name="batal" style="width:25%; background: #ff3333;"  href=""> BATAL</a> -->
-                      <input type="batal" value="Batal" name="batal" onclick="closeForm('mapel')" style="width:25%; background: #ff3333;" />
+                      <input type="batal" value="Kembali" name="batal" onclick="closeForm('mapel')" style="width:25%; background: #ff3333;" />
                       <input type="submit" value="Simpan" name="simpan"style="width:25%;" />
                     </div>
                   </div>

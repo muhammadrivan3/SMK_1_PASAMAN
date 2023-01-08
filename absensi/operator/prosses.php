@@ -195,7 +195,7 @@ if(isset($_GET['tipe'])){
         if($query_daftar){
         MessagePopUp("Data Jam Mengajar Sudah Dirubah","pelajaran/lokal");
         }else{
-            Header("Location:http://localhost/SMK_1_PASAMAN/absensi/404.php");
+            Header("Location:http://localhost/SMK_1_PASAMAN/absensi/404.php"); 
         }
     }else if ($_GET['edit'] == "mapel") {
         // code...
@@ -212,7 +212,7 @@ if(isset($_GET['tipe'])){
     if($_GET['hapus']=="guru"){
         $queryHapusGuru = mysqli_query($konek,"DELETE FROM biodata_guru WHERE id_guru='$_POST[id_guru]'");
         $queryHapusJamGuru = mysqli_query($konek,"DELETE FROM biodata_guru WHERE id_guru='$_POST[id_guru]'");
-    if($queryHapusGuru){
+        if($queryHapusGuru){
 
       MessagePopUp("Data Guru Sudah Terhapus","guru/daftar_guru");
         }else{
@@ -228,16 +228,17 @@ if(isset($_GET['tipe'])){
         }
     }else if($_GET['hapus']=="tugas_guru"){
         $queryHapustugas_guru = mysqli_query($konek,"DELETE FROM tugas_tambahan WHERE id_guru='$_POST[id_guru]'");
-    if($queryHapustugas_guru){
+        if($queryHapustugas_guru){
 
-      MessagePopUp("Data Tugas Guru Sudah Terhapus","guru/tugas_guru");
+        MessagePopUp("Data Tugas Guru Sudah Terhapus","guru/tugas_guru");
         }else{
             Header("Location:http://localhost/SMK_1_PASAMAN/absensi/404.php");
         }
         
     }else if($_GET['hapus']=="jam_mengajar"){
-        $queryHapusJam_mengajar = mysqli_query($konek,"DELETE FROM jam_mengajar WHERE id_guru='$_POST[id_guru]'");
-    if($queryHapusJam_mengajar){
+
+        $queryHapusJam_mengajar = mysqli_query($konek,"DELETE FROM jam_mengajar WHERE id_guru=$_POST[id_guru]");
+        if($queryHapusJam_mengajar){
 
       MessagePopUp("Data Jam Mengajar Sudah Terhapus","guru/jam_mengajar");
         }else{

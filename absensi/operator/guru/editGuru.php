@@ -98,7 +98,8 @@ include '../../layout/header.php';
                     <select name="jabatan" class="form-control" id="jabatan">
                       <option value="">Pilih Jabatan</option>
                       <?php
-                      $arrJabatan = array('kepala sekolah'=>'Kepala Sekolah');
+                      $arrJabatan = array('kepala sekolah'=>'Kepala Sekolah','wakil kepala sekolah'=>'Wakil Kepala Sekolah',
+                        'bendahara/kepala yayasan'=>'Bendahara/Kepala Yayasan','kaproka'=>'Kaproka', 'wali kelas'=>'Wali Kelas', 'guru'=>'Guru',);
                       foreach ($arrJabatan as $key => $value) {
                         // code...
                         if ($key == $dataGuru['jabatan_guru']) {
@@ -111,11 +112,6 @@ include '../../layout/header.php';
                       }
                        ?>
                       
-                      <!-- <option value="wakil kepala sekolah">Wakil Kepala Sekolah</option> -->
-                      <!-- <option value="bendahara">Bendahara/Kepala Yayasan</option>
-                      <option value="kaproka">Kaproka</option>
-                      <option value="wali kelas">Wali Kelas</option>
-                      <option value="guru">Guru</option> -->
                     </select>
                   </div>
                 </div>
@@ -126,18 +122,11 @@ include '../../layout/header.php';
                     <input type="number" class="form-control"  placeholder="Telepon" name="telepon" value=<?php echo $dataGuru['telepon_guru']; ?>>
                   </div>
                 </div>
-                <!-- <div class="row mb-3">
-                  <label for="inputPassword" class="col-sm-2 col-form-label">Username</label>
-                  :
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control"  placeholder="Username" name="get_username">
-                  </div>
-                </div> -->
               </div>
               <?php } ?>
               <div class="row mb-3">
                 <div class="col-sm-10 offset-sm-2">
-                  <input type="batal" value="Batal" name="batal" onclick="closeForm('daftar_guru')" style="width:25%; background: #ff3333;" />
+                  <input type="batal" value="Kembali" name="batal" onclick="closeForm('daftar_guru')" style="width:25%; background: #ff3333;" />
                   <input type="submit" value="Simpan" name="simpan" style="width:25%;" />
                 </div>
               </div>
