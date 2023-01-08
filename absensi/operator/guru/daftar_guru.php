@@ -70,55 +70,50 @@ include "../../layout/header.php"
                               <td class="text-center"><?php echo $dataGuru['status_guru']; ?></td>
                               <td class="text-center"><?php echo $dataGuru['jabatan_guru']; ?></td>
                               <td class="text-center"><?php echo $dataGuru['telepon_guru']; ?></td>
-                              <td class="text-center" colspan="2">Option</td>
-                            </tr>
-                            <?php $no++;}} 
-                            ?>
-                          </tbody>
-                        </table>
-                        <!--awal menentukan banyaknya halaman pagination-->
-                        <?php
-                        $query2 = mysqli_query($konek, "SELECT * FROM biodata_guru");
-                        $jumlahdata = mysqli_num_rows($query2);
-                        $jumlahhalaman = ceil($jumlahdata/$batas);
-                        ?>
-                        <!--akhir menentukan banyaknya halaman pagination-->
+                              <td class="text-center" style="width:5%;"><form action="" class="form-container" style="margin:10px" autocomplete="false">
 
-                        <!--awal navigasi pagination-->
-                        <nav>
-                          <ul class="pagination justify-content-center">
-                            <?php
-                            for($i=1;$i<=$jumlahhalaman;$i++) {
-                              if ($i != $halaman) {
-                                echo "<li class='page-item'><a class='page-link' href='daftar_guru.php?halaman=$i'>$i</a></li>";
-                              } 
-                              else {
-                                echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
-                              }
-                            }
-                            ?>
-                          </ul>
-                        </nav>
-                        <!--akhir navigasi pagination-->
-                        <!-- <nav aria-label="Page navigation example">
-                          <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                              <a class="page-link" href="#">Next</a>
-                            </li>
-                          </ul>
-                        </nav> -->
-                      </div>
-                      <div class="widget-content">
-                        <div id="placeholder"></div>
-                        <p id="choices"></p>
-                      </div>
-                    </div>
+
+                               <a href="editGuru?id_guru=<?PHP echo $dataGuru['id_guru']?>" class="btn" style=" border-color: white;border-radius: 5px; background-color: #999999;"><i class="icon-edit" style="color:white;"></i></a>
+                             </form>
+                           </td>
+                           <td class="text-center" style="width:5%;"><form action="../prosses.php?hapus=guru" method="post" class="form-container" style="margin:10px" autocomplete="false">
+
+
+                            <input type="hidden" name="id_guru" value=<?php echo $dataGuru['id_guru']; ?>>
+                            <button class="btn" type="submit" style=" border-color: white;border-radius: 5px; background-color: #ff3333;"><i class="icon-trash" style="color:white;"></i> </button>
+                          </form></td>
+                        </tr>
+                        <?php $no++;}} 
+                        ?>
+                      </tbody>
+                    </table>
+                    <!--awal menentukan banyaknya halaman pagination-->
+                    <?php
+                    $query2 = mysqli_query($konek, "SELECT * FROM biodata_guru");
+                    $jumlahdata = mysqli_num_rows($query2);
+                    $jumlahhalaman = ceil($jumlahdata/$batas);
+                    ?>
+                    <!--akhir menentukan banyaknya halaman pagination-->
+
+                    <!--awal navigasi pagination-->
+                    <nav>
+                      <ul class="pagination justify-content-center">
+                        <?php
+                        for($i=1;$i<=$jumlahhalaman;$i++) {
+                          if ($i != $halaman) {
+                            echo "<li class='page-item'><a class='page-link' href='daftar_guru.php?halaman=$i'>$i</a></li>";
+                          } 
+                          else {
+                            echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
+                          }
+                        }
+                        ?>
+                      </ul>
+                    </nav>
+                  </div>
+                  <div class="widget-content">
+                    <div id="placeholder"></div>
+                    <p id="choices"></p>
                   </div>
                 </div>
               </div>
@@ -129,7 +124,9 @@ include "../../layout/header.php"
     </div>
   </div>
 </div>
-      <script src="../../assets/js/custom/custom.js"></script>
+</div>
+</div>
+<script src="../../assets/js/custom/custom.js"></script>
       <!-- <script src="../../assets/tables/js/jquery-3.6.3.js"></script>
       <script src="../../assets/tables/js/dataTables.bootstrap.js"></script>
       <script src="../../assets/tables/js/dataTables.bootstrap5.js"></script>

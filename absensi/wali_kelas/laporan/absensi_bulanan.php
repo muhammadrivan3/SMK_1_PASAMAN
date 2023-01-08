@@ -151,32 +151,39 @@ include '../../layout/header.php';
                               $daterange = new DatePeriod($begin, $interval ,$end);
                               foreach($daterange as $date1){
                                 $tglDimulai = $date1->format("Y-m-d");
+
                                 $queryDataAbsensi = mysqli_query($konek,"SELECT * FROM absensi_siswa  WHERE id_siswa=".$items['id_siswa']." AND id_wali_kelas=".$get_lokal." AND id_jurusan=".$get_jurusan." AND jam_absensi=".$i." AND tgl_absensi='".$tglDimulai."'");
                                 if(mysqli_num_rows($queryDataAbsensi) > 0){
-                                  while($dataAbsenSiswa = mysqli_fetch_array($queryDataAbsensi)){
-                                    if ($dataAbsenSiswa['absensi']=='H') {
-                                            // code...
-                                      $hadir++;
-                                    }else if ($dataAbsenSiswa['absensi']=='A') {
-                                            // code...
-                                      $alfa++;
-                                    }else if ($dataAbsenSiswa['absensi']=='C') {
-                                            // code...
-                                      $cabut++;
-                                    }else if ($dataAbsenSiswa['absensi']=='I') {
-                                            // code...
-                                      $izin++;
-                                    }else if ($dataAbsenSiswa['absensi']=='S') {
-                                            // code...
-                                      $sakit++;
+                                  if (date('l',strtotime($tglDimulai)) != 'Sunday') {
+                                    // code...
+                                      while($dataAbsenSiswa = mysqli_fetch_array($queryDataAbsensi)){
+                                      if ($dataAbsenSiswa['absensi']=='H') {
+                                              // code...
+                                        $hadir++;
+                                      }else if ($dataAbsenSiswa['absensi']=='A') {
+                                              // code...
+                                        $alfa++;
+                                      }else if ($dataAbsenSiswa['absensi']=='C') {
+                                              // code...
+                                        $cabut++;
+                                      }else if ($dataAbsenSiswa['absensi']=='I') {
+                                              // code...
+                                        $izin++;
+                                      }else if ($dataAbsenSiswa['absensi']=='S') {
+                                              // code...
+                                        $sakit++;
+                                      }
+                                      if ($dataAbsenSiswa['absensi']=="C" || $dataAbsenSiswa['absensi']=="A") {
+                                          // code...
+                                        echo "<td style='color:red;'>".$dataAbsenSiswa['absensi']."</td>";
+                                      }else{
+                                        echo "<td>".$dataAbsenSiswa['absensi']."</td>";
+                                      }
                                     }
-                                    if ($dataAbsenSiswa['absensi']=="C" || $dataAbsenSiswa['absensi']=="A") {
-                                        // code...
-                                      echo "<td style='color:red;'>".$dataAbsenSiswa['absensi']."</td>";
-                                    }else{
-                                      echo "<td>".$dataAbsenSiswa['absensi']."</td>";
-                                    }
+                                  }else{
+                                    echo "<td></td>";
                                   }
+                                  
                                 }else{
                                   echo "<td></td>";
                                 }

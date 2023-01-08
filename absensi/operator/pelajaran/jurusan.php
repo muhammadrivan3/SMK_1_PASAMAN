@@ -11,7 +11,6 @@ include '../../layout/header.php';
       <div class="row justify-content-center">
         <div class="col-12">
           <div class="details-content">
-
             <div class="container">
               <div class="row">
                 <div class="col-sm">
@@ -22,7 +21,6 @@ include '../../layout/header.php';
                 </div>
               </div>
             </div>
-
             <div id="myDiv" class="container-fluid">
               <hr>
               <div class="row-fluid">
@@ -62,7 +60,16 @@ include '../../layout/header.php';
                             <td class="text-center" ><?php echo $dataJurusan['nama_jurusan']; ?></td>
                             <td class="text-center" ><?php echo $dataJurusan['kosentrasi_jurusan']; ?></td>
                             <td class="text-center" ><?php echo strtoupper($dataJurusan['nama_guru']); ?></td>
-                            <td class="text-center"></td>
+                            <td class="text-center" style="width:5%;"><form action="" class="form-container" style="margin:10px" autocomplete="false">
+
+
+                               <a href="editJurusan?id_jurusan=<?PHP echo $dataJurusan['id_jurusan']?>" class="btn" style=" border-color: white;border-radius: 5px; background-color: #999999;"><i class="icon-edit" style="color:white;"></i></a>
+                             </form>
+                           </td>
+                           <td class="text-center" style="width:5%;"><form action="../prosses.php?hapus=jurusan" method="post" class="form-container" style="margin:10px" autocomplete="false">
+                            <input type="hidden" name="id_jurusan" value=<?php echo $dataJurusan['id_jurusan']; ?>>
+                            <button class="btn" type="submit" style=" border-color: white;border-radius: 5px; background-color: #ff3333;"><i class="icon-trash" style="color:white;"></i> </button>
+                          </form></td>  
                           </tr>
                           <?php 
                           $no++;
@@ -96,15 +103,11 @@ include '../../layout/header.php';
                             ?>
                           </ul>
                         </nav>
-                        <!--akhir navigasi pagination-->
-
                     </div>
-                    
                   </div>
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </div>

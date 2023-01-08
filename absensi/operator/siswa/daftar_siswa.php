@@ -66,7 +66,18 @@ include '../../layout/header.php';
                             <td class="text-center"><?php echo $dataSiswa['kelas_siswa']; ?> - <?php echo $dataSiswa['nama_lokal']; ?></td>
                             <td class="text-center"><?php echo $dataSiswa['nama_jurusan']; ?>-<?php echo $dataSiswa['kosentrasi_jurusan']; ?></td>
                             <td class="text-center"><?php echo $dataSiswa['telepon_siswa']; ?></td>
-                            <td></td>
+                            <td class="text-center" style="width:5%;"><form action="" class="form-container" style="margin:10px" autocomplete="false">
+
+
+                               <a href="editSiswa?id_siswa=<?PHP echo $dataSiswa['id_siswa']?>" class="btn" style=" border-color: white;border-radius: 5px; background-color: #999999;"><i class="icon-edit" style="color:white;"></i></a>
+                             </form>
+                           </td>
+                           <td class="text-center" style="width:5%;"><form action="../prosses.php?hapus=siswa" method="post" class="form-container" style="margin:10px" autocomplete="false">
+
+
+                            <input type="hidden" name="id_siswa" value=<?php echo $dataSiswa['id_siswa']; ?>>
+                            <button class="btn" type="submit" style=" border-color: white;border-radius: 5px; background-color: #ff3333;"><i class="icon-trash" style="color:white;"></i> </button>
+                          </form></td>
                           </tr>
                           <?php
                         $no++;} ?>

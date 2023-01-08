@@ -132,6 +132,18 @@ include '../../layout/header.php';
                                 echo $total;
                               } ?>
                             </td>
+                            <!-- <td class="text-center" style="width:5%;"><form action="" class="form-container" style="margin:10px" autocomplete="false">
+
+
+                               <a href="editJamMengajar?jam_mengajar=<?PHP echo $dataJamMengajar['id_jam_mengajar']?>" class="btn" style=" border-color: white;border-radius: 5px; background-color: #999999;"><i class="icon-edit" style="color:white;"></i></a>
+                             </form>
+                           </td> -->
+                           <td class="text-center" style="width:5%;"><form action="../prosses.php?hapus=jam_mengajar" method="post" class="form-container" style="margin:10px" autocomplete="false">
+
+
+                            <input type="hidden" name="id_guru" value=<?php echo $dataGuru['id_guru']; ?>>
+                            <button class="btn" type="submit" style=" border-color: white;border-radius: 5px; background-color: #ff3333;"><i class="icon-trash" style="color:white;"></i> </button>
+                          </form></td>
                           </tr>
 
                           <?php

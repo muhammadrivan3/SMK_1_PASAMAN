@@ -60,6 +60,16 @@
                              <td><?php echo $dataWaliKelas['kelas']; ?></td>
                              
                              <td><?php echo strtoupper($dataWaliKelas['nama_guru']); ?></td>
+                             <td class="text-center" style="width:5%;"><form action="" class="form-container" style="margin:10px" autocomplete="false">
+
+
+                               <a href="editLokal?id_ruangan=<?PHP echo $dataWaliKelas['id_wali_kelas']?>" class="btn" style=" border-color: white;border-radius: 5px; background-color: #999999;"><i class="icon-edit" style="color:white;"></i></a>
+                             </form>
+                           </td>
+                           <td class="text-center" style="width:5%;"><form action="../prosses.php?hapus=ruangan" method="post" class="form-container" style="margin:10px" autocomplete="false">
+                            <input type="hidden" name="id_ruangan" value=<?php echo $dataWaliKelas['id_wali_kelas']; ?>>
+                            <button class="btn" type="submit" style=" border-color: white;border-radius: 5px; background-color: #ff3333;"><i class="icon-trash" style="color:white;"></i> </button>
+                          </form></td>
                            </tr>
                          <?php $no++;} ?>
                            

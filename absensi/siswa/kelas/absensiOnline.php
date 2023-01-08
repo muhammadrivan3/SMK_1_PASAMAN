@@ -37,9 +37,9 @@ include '../../layout/header.php';
                   // code...
                   $hari = "Minggu";
                 }
-                // echo $hari;
-                $queryAbsensiOnline = mysqli_query($konek, "SELECT * FROM jam_mengajar JOIN mapel ON mapel.id_mapel = jam_mengajar.id_mapel JOIN biodata_guru ON biodata_guru.id_guru = jam_mengajar.id_guru WHERE hari='".$hari."' AND kelas='".$_SESSION['kelas']."' AND ruangan=".$_SESSION['ruangan']." AND id_jurusan=".$_SESSION['jurusan']);
+                $queryAbsensiOnline = mysqli_query($konek, "SELECT * FROM jam_mengajar JOIN mapel ON mapel.id_mapel = jam_mengajar.id_mapel JOIN biodata_guru ON biodata_guru.id_guru = jam_mengajar.id_guru WHERE hari='".$hari."' AND kelas='".$_SESSION['kelas']."' AND ruangan=".$_SESSION['ruangan']." AND id_jurusan=".$_SESSION['jurusan']." ORDER BY jam_mulai");
                 // echo date('l');
+                $jamKe = 1;
                 while ($dataAbsensiOnline = mysqli_fetch_array($queryAbsensiOnline)) {?>
 
                   <div class="single-popular-course mb-100 wow fadeInUp" data-wow-delay="250ms" style="visibility: visible; animation-delay: 250ms; animation-name: fadeInUp;">
@@ -74,18 +74,22 @@ include '../../layout/header.php';
                       </div>
                     </div>
                     <div class="course-fee h-100">
-                      <a href="../prosses.php?tipe=absen_siswa&guru=<?php echo $guruMengajar; ?>&jam=<?php echo $dataAbsensiOnline['jam_mulai']; ?>" class="kuliah blink">Masuk</a>
+                     <!--  <a href="detailAbsensiOnline?id_AbsensiKelas=<?php echo $dataAbsensiOnline['id_jam_mengajar']; ?>&jamKe=<?php echo $jamKe; ?> &hari=<?php echo $hari; ?>" class="kuliah blink">Masuk</a> -->
                       <?php date_default_timezone_set('Asia/Jakarta'); ?>
-                      <?php $waktuSekarang = date('H:i:s'); ?>
+                      <?php $waktuSekarang = date('H:i:s A'); ?>
                       <?php if ($dataAbsensiOnline['jam_mulai'] <= $waktuSekarang && $dataAbsensiOnline['jam_berakhir']>= $waktuSekarang) {?>
-                      <a href="../prosses.php?tipe=absen_siswa&id_siswa=<?php echo $_SESSION['id_siswa']; ?>" class="kuliah blink">MASUK</a> 
+                        <a href="detailAbsensiOnline?id_AbsensiKelas=<?php echo $dataAbsensiOnline['id_jam_mengajar']; ?>&jamKe=<?php echo $jamKe; ?> &hari=<?php echo $hari; ?>" class="kuliah blink">Masuk</a>
+                      <!-- <a href="../prosses.php?tipe=absen_siswa&guru=<?php echo $guruMengajar; ?>&jam=<?php echo $dataAbsensiOnline['jam_mulai']; ?>" class="kuliah blink">Masuk</a>  -->
                       <?php  
-                      } ?>                           
+                      }else{ ?>
+                        <a href="" class="pendding" style="background-color: #808080;">Pending</a>
+                      <?php } ?>                           
                     </div>
                   </div>
                 </div>
 
                 <?php
+                $jamKe++;
                 }
                  ?>
                 

@@ -13,7 +13,6 @@
         <h1 class="text-white">SMK N 1 PASAMAN BARAT</h1>
       </div>
   </div>
-  
     <br>
     <section id="services">
               <div class="container">

@@ -101,7 +101,7 @@ include '../../layout/header.php';
 </div>
 </div>
 
-<script src="../../js/custom/custom.js"></script>
+<script src="../../assets/js/custom/custom.js"></script>
 <script >
   $('.pane-hScroll').scroll(function() {
     $('.pane-vScroll').width($('.pane-hScroll').width() + $('.pane-hScroll').scrollLeft());

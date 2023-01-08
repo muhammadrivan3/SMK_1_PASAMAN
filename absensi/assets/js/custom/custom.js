@@ -19,9 +19,8 @@ function openForm() {
 }
 
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
+function closeForm(alamat) {
+  window.location.href=alamat;
 }
 
 let numDisplay = document.querySelectorAll(".num");

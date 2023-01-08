@@ -1,7 +1,12 @@
 <?php 
 include "../db/koneksi.php";
 
-
+function MessagePopUp($message,$RedirectTo) {
+//     echo "<div id='dialog' title='Basic dialog'>
+//   <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &apos;x&apos; icon.</p>
+// </div>";
+      echo "<script>window.location.href='".$RedirectTo."';alert('".$message."');</script>";
+}
 if (isset($_GET['tipe'])) {
 		// code...
 	if ($_GET['tipe'] == "absensiSiswa") {
@@ -21,7 +26,7 @@ if (isset($_GET['tipe'])) {
 					foreach ($_POST['id_siswa'] as $x => $value) {
 						$queryInput = mysqli_query($konek,"UPDATE absensi_siswa SET absensi='".$_POST['absensi'][$x]."' , keterangan='".$_POST['keterangan'][$x]."' WHERE id_siswa='".$_POST['id_siswa'][$x]."' AND tgl_absensi='$_POST[tgl]' AND jam_absensi='$_POST[jam]';");
 					}
-					Header("Location:absensi/absensi_online");
+					MessagePopUp("Data Absensi Sudah Diupdate","absensi/absensi_online");
 				}else{
 					// $setArray = array_merge($_POST['id_siswa'],$_POST['absensi'],$_POST['keterangan']);
 					// $jamBelajar =$data['jam_mulai'];
@@ -34,7 +39,7 @@ if (isset($_GET['tipe'])) {
 							values('".$_POST['id_siswa'][$x]."','$_POST[lokal]','$_SESSION[id_user]','$_POST[id_jurusan]','$_POST[tgl]','$_POST[jam],','".$_POST['absensi'][$x]."','".$_POST['keterangan'][$x]."');");
 						// echo "-".$id_siswa."-".$kodeAbsen."<br>";					
 					}
-					Header("Location:absensi/absensi_online");
+					MessagePopUp("Data Absensi Sudah Tersimpan","absensi/absensi_online");
 
 				}
 

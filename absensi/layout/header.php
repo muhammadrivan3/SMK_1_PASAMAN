@@ -72,7 +72,7 @@ $data=mysqli_fetch_array($query);
                 </div>  
 
               </li>
-              <li class="nav-item dropdown">
+              <!-- <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">LAPORAN</span></a>
                 <ul class="dropdown-menu multi-level" style="margin-left: 10;">
                   <li class="nav-item dropdown-submenu" style="width: 80%;">
@@ -85,7 +85,7 @@ $data=mysqli_fetch_array($query);
                     </ul>
                   </li>
                 </ul>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link text-white" style="font-weight: 600; font-size: 1.2em;" href="#">PUSTAKA</a>
               </li>
@@ -113,8 +113,6 @@ $data=mysqli_fetch_array($query);
                   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Tugas</span></a>
                   <div class="dropdown-menu">
                     <a href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/jadwal_jam_mengajar" class="dropdown-item">Jadwal Mengajar</a>
-                  <!-- <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/jurusan" class="dropdown-item">Jurusan</a>
-                    <a href="http://localhost/SMK_1_PASAMAN/absensi/operator/pelajaran/lokal" class="dropdown-item">Ruangan</a> -->
                   </div>  
 
                 </li>
@@ -125,6 +123,14 @@ $data=mysqli_fetch_array($query);
                 </ul>
               </li>
               <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Laporan</span></a>
+                <ul class="dropdown-menu multi-level" style="margin-left: 10;">
+                  <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_harian">Harian</a></li>
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_mingguan">Mingguan</a></li>
+                      <li><a class="dropdown-item" href="http://localhost/SMK_1_PASAMAN/absensi/wali_kelas/laporan/absensi_bulanan">Bulanan</a></li>
+                </ul>
+              </li>
+              <!-- <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text">Laporan</span></a>
                 <ul class="dropdown-menu multi-level" style="margin-left: 10;">
                   <li class="nav-item dropdown-submenu" style="width: 80%;">
@@ -144,7 +150,7 @@ $data=mysqli_fetch_array($query);
                     </ul>
                   </li>
                 </ul>
-              </li>
+              </li> -->
               
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link " data-bs-toggle="dropdown" style="color: white; font-weight: 600; font-size: 1.2em;"><span class="text"><div class="text-center">

@@ -23,6 +23,13 @@ include '../../layout/header.php';
             <div id="myDiv" class="container-fluid">
               <hr>
               <div class="m-4">
+                <?php 
+                $queryDataJamMengajar = mysqli_query($konek, "SELECT * FROM jam_mengajar WHERE id_jam_mengajar=".$_GET['jam_mengajar']);
+                while($dataJamMengajar = mysqli_fetch_array($queryDataJamMengajar)){
+                  echo "string";
+                  }
+                 ?>
+                
                 <form action="../prosses.php?tipe=jamMengajar" method="post" class="form-container" style="margin:10px" autocomplete="false">
                   <h1>Tambahkan Jam Mengajar</h1>
                   <div class="row mb-3">
