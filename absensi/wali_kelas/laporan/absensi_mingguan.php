@@ -94,6 +94,7 @@ include '../../layout/header.php';
             <div class="span12">
               <div class="widget-box">
                 <div class="widget-title">
+                  <form action="cetak.php?absensi=Mingguan" method="post" class="form-container" style="margin:10px" autocomplete="false">
                   <div style="overflow-x:auto;">
                     <table class="table table-bordered" style="width:100%;">
                       <caption id="caption">Absensi Mingguan</caption>
@@ -143,6 +144,13 @@ include '../../layout/header.php';
                         $get_jurusan = $_GET['jurusan'];
                         $tgl_absen =explode("-", $_GET['tgl_absen']);
                         $mingguke = $_GET['minggu'];
+                        ?>
+                        <input type='hidden' name='get_kelas' value="<?php echo $get_kelas; ?>" />
+                        <input type='hidden' name='get_lokal' value="<?php echo $get_lokal; ?>" />
+                        <input type='hidden' name='get_jurusan' value="<?php echo $get_jurusan; ?>" />
+                        <input type='hidden' name='tgl_absen' value="<?php echo $tgl_absen; ?>" />
+                        <input type='hidden' name='mingguke' value="<?php echo $mingguke; ?>" />
+                        <?php
                         $date_start = strtotime($tgl_absen[0]."-".$tgl_absen[1]."-"."01");
                         $month_start = date('l',strtotime($tgl_absen[0]."-".$tgl_absen[1]."-"."01"));
                         if ($month_start == 'Sunday') {
@@ -306,8 +314,11 @@ include '../../layout/header.php';
                     </table>
                     
                   </div>
+                  <div align="right">
+                        <input type="submit" value="Print" name="simpan" style="width:10%;">
+                      </div>
                 </div>
-
+              </form>
               </div>
               <div class="widget-content">
                 <div id="placeholder"></div>

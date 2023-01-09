@@ -69,22 +69,7 @@ include '../../layout/header.php';
                   <div class="col">:</div>
                   <div class="col"><input type="date" name="tgl_absen" class="form-control" style="width:200px;"></div>
                 </div>
-
                 <br>
-                <!-- <div class="row row-cols-auto">
-                  <div class="col-1">Jam Ke- :</div>
-                  <div class="col">:</div>
-                  <div class="col">
-                    <select name="jam" class="form-control" id="jam" style="width:200px;">
-                      <option value="">Jam</option>
-                      <?php 
-                      $jam=1;
-                      for($jam=1; $jam<=10;$jam++){
-                        echo "<option value=".$jam.">".$jam."</option>";
-                        ?>
-                      <?php } ?>
-                    </select>
-                  </div> -->
                   <div class="col">
                     <button style="padding-top: calc(0.375rem + 1px);
                     padding-bottom: calc(0.375rem + 1px);
@@ -109,7 +94,6 @@ include '../../layout/header.php';
                               style="width:5%; border-radius: 10px 0 0 0 ;" rowspan="3">NO</th>
                               <th class="text-center thFixed " rowspan="3" style="min-width:300px;" >NAMA/NIS  </th>
                               <th class="text-center thFixed " rowspan="1" colspan="10" >HARI</th>
-
                               <th class="text-center thFixed" rowspan="2" colspan="5" style="">TOTAL</th>
                               <th class="text-center thFixed " rowspan="3" style="min-width:100px;border-radius: 0 10px 0 0;">KETERANGAN</th>
                             </tr>
@@ -246,23 +230,26 @@ include '../../layout/header.php';
                             ?>
                           </tbody>
                         </table>
-                        <input type="submit" value="Simpan" name="simpan">
-                      </form>
-                    </div>
+                      </div>
+                      <div align="right">
+                        <input type="submit" value="Print" name="simpan" style="width:10%;">
+                      </div>
+                    </form>
                   </div>
                 </div>
-                <div class="widget-content">
-                  <div id="placeholder"></div>
-                  <p id="choices"></p>
-                </div>
-                <!-- <input type="button" onclick="window.print();" value="Print"/> -->
               </div>
+              <div class="widget-content">
+                <div id="placeholder"></div>
+                <p id="choices"></p>
+              </div>
+              <!-- <input type="button" onclick="window.print();" value="Print"/> -->
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
 </div>
