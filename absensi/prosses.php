@@ -4,6 +4,13 @@
 	//memasukan modul koneksi
 include "db/koneksi.php";
 
+
+ function MessagePopUp($message,$RedirectTo) {
+//     echo "<div id='dialog' title='Basic dialog'>
+//   <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &apos;x&apos; icon.</p>
+// </div>";
+      echo "<script>window.location.href='".$RedirectTo."';alert('".$message."');</script>";
+}
 if (isset($_GET['tipe'])) {
 		// code...
 	if($_GET['tipe']=="login"){
@@ -27,7 +34,9 @@ if (isset($_GET['tipe'])) {
 					}
 
 				}
-			} 
+			}else{
+				MessagePopUp("Mohon maaf user tidak di temukan","login");
+			}
 			
 		}else if ($_POST['jenis_login'] == "siswa") {
 				// code...
@@ -46,6 +55,8 @@ if (isset($_GET['tipe'])) {
 					Header("Location:siswa");
 
 				}
+			}else{
+				MessagePopUp("Mohon maaf user tidak di temukan","login");
 			} 
 			
 		}else{
