@@ -34,7 +34,6 @@ include '../layout/header.php';
                           <th class="text-center" style="width:10%;background-color: #404040; color:white;">Kelas</th>
                           <th class="text-center" style="width:20%;background-color: #404040; color:white;">Jurusan / Kosentrasi</th>
                           <th class="text-center" style="width:20%;background-color: #404040; color:white;">jam</th>
-                          <th class="text-center" colspan="2" style="width: 10%;background-color: #404040; color:white;border-radius: 0 10px 0 0 ;">Option</th>
                         </tr>
                       </thead>
                       <tbody>

@@ -523,3 +523,22 @@ table thead .thFixed {
   10% {box-shadow: 0 0 2px 2px #07db16, 0 0 3px 3px #fff, 0 0 2px 3px #07db16;  }
   100% {box-shadow: 0 0 2px 2px rgba(26, 255, 179, 0), 0 0 0px 2px #fff, 0 0 0px 5px rgba(26, 255, 179, 0);  }
 }
+
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+.contact .info-box {
+    color: #444444;
+    text-align: center;
+    box-shadow: 0 0 20px rgb(214 215 216 / 50%);
+    padding: 20px 0 30px 0;
+}
+.contact .php-email-form button[type="submit"] {
+    background: #3fbbc0;
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+}

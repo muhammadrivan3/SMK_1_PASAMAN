@@ -158,7 +158,7 @@ if(isset($_GET['tipe'])){
         $terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
         $query_daftar=mysqli_query($konek,"UPDATE biodata_siswa SET foto_siswa='".$namaFile."', nis_siswa='$_POST[nis]', nama_siswa='$_POST[nama]', tgl_lahir_siswa='$_POST[tgl_lahir]', jenis_kelamin_siswa='$_POST[jenis_kelamin]', alamat_siswa='$_POST[alamat]', telepon_siswa='$_POST[telepon]', kelas_siswa='$_POST[kelas]', jurusan_siswa='$_POST[jurusan]', lokal_siswa='$_POST[lokal]' WHERE id_siswa='$_POST[id_siswa]' ");
         if($query_daftar){
-          MessagePopUp("Data Guru Sudah Dirubah","siswa/daftar_siswa");
+          MessagePopUp("Data Siswa Sudah Dirubah","siswa/daftar_siswa");
         }else{
           Header("Location:http://localhost/SMK_1_PASAMAN/absensi/404.php");
         }
@@ -175,7 +175,7 @@ if(isset($_GET['tipe'])){
         // code...
         $query_daftar=mysqli_query($konek,"UPDATE jam_mengajar SET id_guru = '$_POST[guru]', id_mapel = '$_POST[mapel]', kelas = '$_POST[kelas]', ruangan = '$_POST[ruangan]', id_jurusan = '$_POST[jurusan]', hari = '$_POST[hari]', jam_mulai = '$_POST[jam_mulai]', jam_berakhir = '$_POST[jam_berakhir]'");
         if($query_daftar){
-        MessagePopUp("Data Jam Mengajar Sudah Dirubah","guru/jam_mengajar");
+        MessagePopUp("Data Tugas Guru Sudah Dirubah","guru/jam_mengajar");
         }else{
             Header("Location:http://localhost/SMK_1_PASAMAN/absensi/404.php");
         }
@@ -184,7 +184,7 @@ if(isset($_GET['tipe'])){
        $query_daftar=mysqli_query($konek,"UPDATE jurusan SET nama_jurusan='$_POST[jurusan]', kosentrasi_jurusan='$_POST[kosentrasi]', kaproka_jurusan='$_POST[guru]' WHERE
       id_jurusan='$_POST[id_jurusan]' ");
         if($query_daftar){
-        MessagePopUp("Data Jam Mengajar Sudah Dirubah","pelajaran/jurusan");
+        MessagePopUp("Data Jurusan Sudah Dirubah","pelajaran/jurusan");
         }else{
             Header("Location:http://localhost/SMK_1_PASAMAN/absensi/404.php");
         }
@@ -193,7 +193,7 @@ if(isset($_GET['tipe'])){
        $query_daftar=mysqli_query($konek,"UPDATE wali_kelas SET guru='$_POST[guru]', kelas='$_POST[kelas]', nama_lokal='$_POST[lokal]' WHERE
       id_wali_kelas='$_POST[id_ruangan]' ");
         if($query_daftar){
-        MessagePopUp("Data Jam Mengajar Sudah Dirubah","pelajaran/lokal");
+        MessagePopUp("Data Ruangan Sudah Dirubah","pelajaran/lokal");
         }else{
             Header("Location:http://localhost/SMK_1_PASAMAN/absensi/404.php"); 
         }
@@ -202,7 +202,7 @@ if(isset($_GET['tipe'])){
        $query_daftar=mysqli_query($konek,"UPDATE mapel SET nama_mapel='$_POST[mapel]', kosentrasi='$_POST[jurusan]' WHERE
       id_mapel='$_POST[id_mapel]' ");
         if($query_daftar){
-        MessagePopUp("Data Jam Mengajar Sudah Dirubah","pelajaran/mapel");
+        MessagePopUp("Data Mapel Sudah Dirubah","pelajaran/mapel");
         }else{
             Header("Location:http://localhost/SMK_1_PASAMAN/absensi/404.php");
         }

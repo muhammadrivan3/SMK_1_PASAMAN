@@ -41,6 +41,7 @@ if (isset($_GET['tipe'])) {
 					$_SESSION['kelas']    = $user['kelas_siswa'];
 					$_SESSION['ruangan']  = $user['lokal_siswa'];
 					$_SESSION['jurusan']  = $user['jurusan_siswa'];
+					$_SESSION['fotoProfil']  = $user['foto_siswa'];
 					$_SESSION['akses'] = "siswa";
 					Header("Location:siswa");
 

@@ -104,10 +104,10 @@ include '../../layout/header.php';
                         // code...
                         if ($key == $dataGuru['jabatan_guru']) {
                           // code...
-                          echo "<option value=".$key." selected>".$value."</option>";
+                          echo "<option value='".$key."' selected>".$value."</option>";
 
                         }else{
-                          echo "<option value=".$key.">".$value."</option>";
+                          echo "<option value='".$key."'>".$value."</option>";
                         }
                       }
                        ?>
