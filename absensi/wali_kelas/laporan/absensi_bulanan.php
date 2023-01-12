@@ -151,6 +151,7 @@ include '../../layout/header.php';
                                 $izin=0;
                                 $sakit=0;
                                 $i=1;
+                                $checkJumlahTGL = 1;
                                 $begin = new DateTime( $tgl_absensi_mulai );
                                 $end = new DateTime( $tgl_absensi_berakhir );
                                 $end = $end->modify( '+1 day' ); 
@@ -195,9 +196,13 @@ include '../../layout/header.php';
                                   }else{
                                     echo "<td></td>";
                                   }
-                                // for ($i=1; $i <= $lop; $i++) {
-
-                                // }
+                                  $checkJumlahTGL++;
+                                }
+                                if($checkJumlahTGL!=31){
+                                  for ($i=$checkJumlahTGL; $i <= 31; $i++) { 
+                                    # code...
+                                    echo "<td></td>";
+                                  }
                                 }
                                 echo "<td>".$hadir."</td>";
                                 echo "<td>".$izin."</td>";

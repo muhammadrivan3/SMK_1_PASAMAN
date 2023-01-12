@@ -75,15 +75,18 @@ include '../../layout/header.php';
                       </div>
                     </div>
                     <div class="course-fee h-100">
-                     <!--  <a href="detailAbsensiOnline?id_AbsensiKelas=<?php echo $dataAbsensiOnline['id_jam_mengajar']; ?>&jamKe=<?php echo $jamKe; ?> &hari=<?php echo $hari; ?>" class="kuliah blink">Masuk</a> -->
+                     
                       <?php date_default_timezone_set('Asia/Jakarta'); ?>
                       <?php $waktuSekarang = date('H:i:s A'); ?>
                       <?php if ($dataAbsensiOnline['jam_mulai'] <= $waktuSekarang && $dataAbsensiOnline['jam_berakhir']>= $waktuSekarang) {?>
                         <a href="detailAbsensiOnline?id_AbsensiKelas=<?php echo $dataAbsensiOnline['id_jam_mengajar']; ?>&jamKe=<?php echo $jamKe; ?> &hari=<?php echo $hari; ?>&guru=<?php echo $guruMengajar; ?>" class="kuliah blink">Masuk</a>
-                      <!-- <a href="../prosses.php?tipe=absen_siswa&guru=<?php echo $guruMengajar; ?>&jam=<?php echo $dataAbsensiOnline['jam_mulai']; ?>" class="kuliah blink">Masuk</a>  -->
                       <?php  
                       }else{ ?>
-                        <a href="" class="pendding" style="background-color: #808080;">Pending</a>
+                        <?php if ($dataAbsensiOnline['jam_berakhir'] < $waktuSekarang){?>
+                          <a href="" class="pendding" style="background-color: #808080;">Berakhir</a>
+                        <?php } else { ?>
+                          <a href="" class="pendding" style="background-color: #808080;">Pending</a>
+                        <?php } ?>
                       <?php } ?>                           
                     </div>
                   </div>
