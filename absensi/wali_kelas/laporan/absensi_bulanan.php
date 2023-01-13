@@ -126,7 +126,8 @@ include '../../layout/header.php';
                             <input type='hidden' name='get_kelas' value="<?php echo $get_kelas; ?>" />
                             <input type='hidden' name='get_lokal' value="<?php echo $get_lokal; ?>" />
                             <input type='hidden' name='get_jurusan' value="<?php echo $get_jurusan; ?>" />
-                            <input type='hidden' name='tgl_absen' value="<?php echo $tgl_absen; ?>" />
+                            <input type='hidden' name='tgl_absen1' value="<?php echo $tgl_absen[0]; ?>" />
+                        <input type='hidden' name='tgl_absen2' value="<?php echo $tgl_absen[1]; ?>" />
                             <?php
 
                             $date_start = strtotime($tgl_absen[0]."-".$tgl_absen[1]."-"."01");

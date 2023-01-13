@@ -152,7 +152,7 @@ if(isset($_GET['tipe'])){
         $namaSementara = $_FILES['foto']['tmp_name'];
 
         // tentukan lokasi file akan dipindahkan
-        $dirUpload = "../assets/image/guru/";
+        $dirUpload = "../assets/image/siswa/";
 
         // pindahkan file
         $terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);

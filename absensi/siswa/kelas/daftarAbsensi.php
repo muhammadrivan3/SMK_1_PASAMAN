@@ -173,9 +173,7 @@ include '../../layout/header.php';
                       </tbody>
                     </table>
                   </div>
-                  <div align="right">
-                    <input type="submit" value="Print" name="simpan" style="width:10%;">
-                  </div>
+                  
                 </form>
               </div>
             </div>

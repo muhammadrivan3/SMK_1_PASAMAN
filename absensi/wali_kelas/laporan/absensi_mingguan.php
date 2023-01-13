@@ -139,6 +139,7 @@ include '../../layout/header.php';
                       <?php 
 
                       if(isset($_GET['kelas']) && isset($_GET['lokal']) && isset($_GET['jurusan']) ){
+
                         $get_kelas = $_GET['kelas'];
                         $get_lokal = $_GET['lokal'];
                         $get_jurusan = $_GET['jurusan'];
@@ -148,7 +149,8 @@ include '../../layout/header.php';
                         <input type='hidden' name='get_kelas' value="<?php echo $get_kelas; ?>" />
                         <input type='hidden' name='get_lokal' value="<?php echo $get_lokal; ?>" />
                         <input type='hidden' name='get_jurusan' value="<?php echo $get_jurusan; ?>" />
-                        <input type='hidden' name='tgl_absen' value="<?php echo $tgl_absen; ?>" />
+                        <input type='hidden' name='tgl_absen1' value="<?php echo $tgl_absen[0]; ?>" />
+                        <input type='hidden' name='tgl_absen2' value="<?php echo $tgl_absen[1]; ?>" />
                         <input type='hidden' name='mingguke' value="<?php echo $mingguke; ?>" />
                         <?php
                         $date_start = strtotime($tgl_absen[0]."-".$tgl_absen[1]."-"."01");
